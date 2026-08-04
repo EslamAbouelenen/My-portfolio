@@ -550,7 +550,57 @@
     #ea-full-portfolio .ea-footer-heading { font-size: 1.6rem !important; margin-bottom: 20px !important; line-height: 1.3 !important;}
     #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-footer-cta-btn { font-size: 0.95rem !important; padding: 12px 15px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; justify-content: center !important;}
+    
+    /* Swipe Indicator for Mobile Sliders */
+    #ea-full-portfolio .ea-services-section,
+    #ea-full-portfolio .ea-projects-section,
+    #ea-full-portfolio .ea-why-me-section {
+        position: relative !important;
+        padding-bottom: 70px !important; /* Make space for indicator at the bottom */
+    }
+    
+    #ea-full-portfolio .ea-services-section::after,
+    #ea-full-portfolio .ea-projects-section::after,
+    #ea-full-portfolio .ea-why-me-section::after {
+        content: 'Swipe ➔';
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: rgb(var(--accent-rgb));
+        background: rgba(var(--accent-rgb), 0.1);
+        padding: 6px 15px;
+        border-radius: 50px;
+        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        animation: pulseSwipeLTR 2s infinite ease-in-out;
+        text-transform: uppercase;
+        z-index: 5;
+    }
+    
+    #ea-full-portfolio[dir="rtl"] .ea-services-section::after,
+    #ea-full-portfolio[dir="rtl"] .ea-projects-section::after,
+    #ea-full-portfolio[dir="rtl"] .ea-why-me-section::after {
+        content: 'اسحب للتصفح ←';
+        letter-spacing: 0;
+        animation: pulseSwipeRTL 2s infinite ease-in-out;
+    }
 }
+
+@keyframes pulseSwipeLTR {
+    0% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateX(6px); }
+    100% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+}
+
+@keyframes pulseSwipeRTL {
+    0% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateX(-6px); }
+    100% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+}
+
 @media (max-width: 480px) {
     #ea-full-portfolio .ea-logo { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-header-btn { display: none !important; } 
