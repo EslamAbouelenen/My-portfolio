@@ -460,7 +460,13 @@
     
     #ea-full-portfolio .ea-services-grid { grid-template-columns: repeat(2, 1fr) !important; }
     #ea-full-portfolio .ea-contact-container { padding: 40px 30px; }
-    #ea-full-portfolio .ea-footer-g@media (max-width: 768px) {
+    #ea-full-portfolio .ea-footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center !important; }
+    #ea-full-portfolio .ea-footer-brand p { max-width: 100% !important; margin: 0 auto 20px !important;}
+    #ea-full-portfolio .ea-social-icons { justify-content: center !important; }
+    #ea-full-portfolio .ea-footer-heading { font-size: 3.2rem !important; }
+    #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 2.8rem !important; }
+}
+@media (max-width: 768px) {
     #ea-full-portfolio .ea-header { padding: 15px 20px !important; }
     #ea-full-portfolio .ea-logo { font-size: 1.5rem !important; }
     #ea-full-portfolio .ea-header-actions { gap: 10px !important; }
