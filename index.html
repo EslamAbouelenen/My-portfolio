@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eslam Abouelenen | Front-End Developer</title>
+    <!-- استدعاء الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ملف التنسيقات الخاص بالموقع -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; background-color: rgb(3, 4, 7);">
+    
+    <div id="ea-full-portfolio" dir="ltr">
+        
+        <!-- الكشاف السحري -->
+        <div id="ea-flashlight"></div>
+        
+        <!-- الخلفية المضيئة بكرات النيون -->
+        <div class="ea-ambient-orbs">
+            <div class="ea-orb ea-orb-1"></div>
+            <div class="ea-orb ea-orb-2"></div>
+        </div>
+        
+        <!-- شاشة التحميل الاحترافية (Staggered Slices) -->
+        <div id="ea-preloader-pro">
+            <div class="ea-preloader-slices">
+                <div class="ea-slice"></div>
+                <div class="ea-slice"></div>
+                <div class="ea-slice"></div>
+                <div class="ea-slice"></div>
+                <div class="ea-slice"></div>
+            </div>
+            
+            <div class="ea-preloader-content-pro">
+                <div class="ea-pro-logo">
+                    <span class="ea-pro-text">EA</span>
+                    <span class="ea-pro-dot">.</span>
+                </div>
+                <div class="ea-pro-progress-wrapper">
+                    <div class="ea-pro-progress-bar" id="ea-progress-bar-pro"></div>
+                </div>
+                <div class="ea-pro-counter">
+                    <span id="ea-preloader-count-pro">0</span><span style="font-size: 2rem; color: rgb(var(--accent-rgb)); margin-left:5px;">%</span>
+                </div>
+                <div class="ea-pro-status">LOADING PORTFOLIO</div>
+            </div>
+        </div>
+
+        <!-- الهيدر -->
+        <header class="ea-header" id="eaHeader">
+            <a href="#" class="ea-logo">EA<span>.</span></a>
+            
+            <ul class="ea-nav-links">
+                <li><a href="#home" data-lang-en="Home" data-lang-ar="الرئيسية">Home</a></li>
+                <li><a href="#about" data-lang-en="About" data-lang-ar="من أنا">About</a></li>
+                <li><a href="#services" data-lang-en="Services" data-lang-ar="الخدمات">Services</a></li>
+                <li><a href="#projects" data-lang-en="Portfolio" data-lang-ar="المشاريع">Portfolio</a></li>
+            </ul>
+            
+            <div class="ea-header-actions">
+                <button class="ea-action-btn" id="eaThemeToggle" title="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="ea-action-btn lang-btn" id="eaLangToggle" title="Switch Language">
+                    عربي
+                </button>
+                <a href="#contact-form" class="ea-header-btn" data-lang-en="Contact Me" data-lang-ar="تواصل معي">Contact Me</a>
+            </div>
+        </header>
+
+        <!-- الهيرو -->
+        <section class="ea-hero-section" id="home">
+            <div class="ea-hero-grid"></div>
+            <div class="ea-hero-bounds">
+                <div class="ea-hero-text-content reveal">
+                    <div class="ea-hero-badge-wrap">
+                        <div class="ea-badge-content">
+                            <span class="ea-glow-dot"></span>
+                            <p class="ea-badge-text" data-lang-en="Available for new projects" data-lang-ar="متاح لاستلام مشاريع جديدة">Available for new projects</p>
+                        </div>
+                    </div>
+                    
+                    <h1 class="ea-hero-heading" data-lang-en="Excellence in building <br><span class='ea-highlight-text'>Digital Platforms</span>" data-lang-ar="الاحترافية في بناء <br><span class='ea-highlight-text'>المنصات الرقمية</span>">Excellence in building <br><span class='ea-highlight-text'>Digital Platforms</span></h1>
+                    
+                    <div class="ea-hero-roles">
+                        <span data-lang-en="Broad experience in: " data-lang-ar="خبرة واسعة في: ">Broad experience in: </span>
+                        <span class="ea-typing-skill"></span><span class="ea-pre-cursor">|</span>
+                    </div>
+                    
+                    <p class="ea-hero-desc" data-lang-en="A specialized developer transforming ideas into modern websites and e-commerce stores, with the highest standards of speed, security, and user experience to ensure your project's success." data-lang-ar="مطور متخصص في تحويل الأفكار إلى مواقع ويب ومتاجر إلكترونية عصرية، بأعلى معايير السرعة، الأمان، وتجربة المستخدم لضمان نجاح مشروعك.">A specialized developer transforming ideas into modern websites and e-commerce stores, with the highest standards of speed, security, and user experience to ensure your project's success.</p>
+                    
+                    <div class="ea-hero-buttons">
+                        <a href="#projects" class="ea-btn-primary" data-lang-en="View My Work" data-lang-ar="شاهد أعمالي">View My Work</a>
+                        <a href="https://drive.google.com/file/d/1GEwJm8763rCEGmCiPetramqIotPx4nzq/view?usp=sharing" target="_blank" class="ea-btn-secondary" data-lang-en="Resume" data-lang-ar="السيرة الذاتية">Resume</a>
+                    </div>
+                </div>
+                
+                <div class="ea-hero-visual-content reveal reveal-left">
+                    <div class="ea-code-window" id="eaCodeWindow">
+                        <div class="ea-code-header"><span class="ea-mac-btn close"></span><span class="ea-mac-btn min"></span><span class="ea-mac-btn max"></span></div>
+                        <div class="ea-code-body"><span class="ea-code-text"></span><span class="ea-code-cursor">_</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. قسم من أنا -->
+        <section class="ea-about-section" id="about">
+            <div class="ea-section-header reveal">
+                <p data-lang-en="Quick Look" data-lang-ar="نبذة سريعة">Quick Look</p>
+                <h2 data-lang-en="Who am I?" data-lang-ar="من أنا؟">Who am I?</h2>
+            </div>
+            <div class="ea-about-split reveal">
+                
+                <div class="ea-about-text-card">
+                    <div class="ea-about-subtitle"><i class="fa-solid fa-code"></i> <span data-lang-en="Front-End Developer" data-lang-ar="مطور واجهات أمامية">Front-End Developer</span></div>
+                    
+                    <h3 class="ea-about-title" data-lang-en="I turn your ideas into <br><span class='ea-highlight-solid'>exceptional digital platforms.</span>" data-lang-ar="أحول أفكارك إلى <br><span class='ea-highlight-solid'>منصات رقمية استثنائية.</span>">I turn your ideas into <br><span class='ea-highlight-solid'>exceptional digital platforms.</span></h3>
+                    
+                    <p class="ea-about-desc" data-lang-en="I'm Eslam Abouelenen. I combine modern design with clean code to build a complete digital platform for you. I don't just focus on aesthetics; I guarantee superior performance and a user experience that turns visitors into loyal customers." data-lang-ar="أنا إسلام أبو العينين، أجمع بين التصميم العصري والكود النظيف لأبني لك منصة رقمية متكاملة. لا أركز فقط على المظهر الجمالي، بل أضمن لك أداءً فائقاً، وتجربة مستخدم تحول الزوار إلى عملاء دائمين.">I'm Eslam Abouelenen. I combine modern design with clean code to build a complete digital platform for you. I don't just focus on aesthetics; I guarantee superior performance and a user experience that turns visitors into loyal customers.</p>
+                    
+                    <div class="ea-about-features">
+                        <div class="ea-feature"><i class="fa-solid fa-check"></i> <span data-lang-en="Clean & Fast Code" data-lang-ar="كود نظيف وسريع">Clean & Fast Code</span></div>
+                        <div class="ea-feature"><i class="fa-solid fa-check"></i> <span data-lang-en="Fully Responsive" data-lang-ar="توافق تام مع الموبايل">Fully Responsive</span></div>
+                        <div class="ea-feature"><i class="fa-solid fa-check"></i> <span data-lang-en="Premium & Modern UI" data-lang-ar="واجهات فخمة وعصرية">Premium & Modern UI</span></div>
+                    </div>
+                    
+                    <div class="ea-about-stats-grid">
+                        <div class="ea-about-stat">
+                            <div class="ea-counter-wrap">
+                                <span>+</span><h4 class="ea-counter" data-target="3">0</h4>
+                            </div>
+                            <p data-lang-en="Years Experience" data-lang-ar="سنوات خبرة">Years Experience</p>
+                        </div>
+                        <div class="ea-about-stat">
+                            <div class="ea-counter-wrap">
+                                <span>+</span><h4 class="ea-counter" data-target="20">0</h4>
+                            </div>
+                            <p data-lang-en="Successful Projects" data-lang-ar="مشروع ناجح">Successful Projects</p>
+                        </div>
+                        <div class="ea-about-stat">
+                            <div class="ea-counter-wrap">
+                                <span>%</span><h4 class="ea-counter" data-target="100">0</h4>
+                            </div>
+                            <p data-lang-en="Happy Clients" data-lang-ar="عميل راضٍ">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ea-about-visual-side">
+                    <div class="ea-robot-wrapper">
+                        <div class="ea-robot-shadow"></div>
+                        <div class="ea-robot-hover-wrap">
+                            <div class="ea-robot-head" id="eaRobotHead">
+                                <div class="ea-antenna"><div class="ea-antenna-glow"></div></div>
+                                <div class="ea-robot-face">
+                                    <div class="ea-eye left"><div class="ea-pupil"></div><div class="ea-eye-lid"></div></div>
+                                    <div class="ea-eye right"><div class="ea-pupil"></div><div class="ea-eye-lid"></div></div>
+                                </div>
+                                <div class="ea-ear left"></div>
+                                <div class="ea-ear right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 2. قسم المهارات -->
+        <section class="ea-skills" id="skills">
+            <div class="ea-section-header reveal">
+                <p data-lang-en="What do I master?" data-lang-ar="ماذا أُجيد؟">What do I master?</p>
+                <h2 data-lang-en="Technical Skills" data-lang-ar="المهارات التقنية">Technical Skills</h2>
+            </div>
+            <div class="ea-skills-marquee-wrapper reveal">
+                <div class="ea-skills-marquee-track">
+                    <div class="ea-skills-group">
+                        <div class="ea-skill-item"><i class="fa-brands fa-html5 ea-skill-icon"></i><div class="ea-skill-name">HTML5</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-css3-alt ea-skill-icon"></i><div class="ea-skill-name">CSS3</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-js ea-skill-icon"></i><div class="ea-skill-name">JavaScript</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-wordpress ea-skill-icon"></i><div class="ea-skill-name">WordPress</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-elementor ea-skill-icon"></i><div class="ea-skill-name">Elementor Pro</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-php ea-skill-icon"></i><div class="ea-skill-name">PHP</div></div>
+                    </div>
+                    <div class="ea-skills-group">
+                        <div class="ea-skill-item"><i class="fa-brands fa-html5 ea-skill-icon"></i><div class="ea-skill-name">HTML5</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-css3-alt ea-skill-icon"></i><div class="ea-skill-name">CSS3</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-js ea-skill-icon"></i><div class="ea-skill-name">JavaScript</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-wordpress ea-skill-icon"></i><div class="ea-skill-name">WordPress</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-elementor ea-skill-icon"></i><div class="ea-skill-name">Elementor Pro</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-php ea-skill-icon"></i><div class="ea-skill-name">PHP</div></div>
+                    </div>
+                    <div class="ea-skills-group">
+                        <div class="ea-skill-item"><i class="fa-brands fa-html5 ea-skill-icon"></i><div class="ea-skill-name">HTML5</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-css3-alt ea-skill-icon"></i><div class="ea-skill-name">CSS3</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-js ea-skill-icon"></i><div class="ea-skill-name">JavaScript</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-wordpress ea-skill-icon"></i><div class="ea-skill-name">WordPress</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-elementor ea-skill-icon"></i><div class="ea-skill-name">Elementor Pro</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-php ea-skill-icon"></i><div class="ea-skill-name">PHP</div></div>
+                    </div>
+                    <div class="ea-skills-group">
+                        <div class="ea-skill-item"><i class="fa-brands fa-html5 ea-skill-icon"></i><div class="ea-skill-name">HTML5</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-css3-alt ea-skill-icon"></i><div class="ea-skill-name">CSS3</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-js ea-skill-icon"></i><div class="ea-skill-name">JavaScript</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-wordpress ea-skill-icon"></i><div class="ea-skill-name">WordPress</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-elementor ea-skill-icon"></i><div class="ea-skill-name">Elementor Pro</div></div>
+                        <div class="ea-skill-item"><i class="fa-brands fa-php ea-skill-icon"></i><div class="ea-skill-name">PHP</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. قسم الخدمات -->
+        <section class="ea-services-section" id="services">
+            <div class="ea-section-header reveal">
+                <p data-lang-en="Areas of Expertise" data-lang-ar="مجالات خبرتي">Areas of Expertise</p>
+                <h2 data-lang-en="How can I help you?" data-lang-ar="بماذا يمكنني مساعدتك؟">How can I help you?</h2>
+            </div>
+            <div class="ea-services-grid reveal">
+                <div class="ea-srv-card">
+                    <div class="ea-srv-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3 class="ea-srv-title" data-lang-en="Front-End Development" data-lang-ar="تطوير الواجهات الأمامية">Front-End Development</h3>
+                    <p class="ea-srv-desc" data-lang-en="Programming interactive and modern user interfaces using the latest web technologies, ensuring full responsiveness on all devices for an unmatched visual experience." data-lang-ar="برمجة واجهات مستخدم تفاعلية وعصرية باستخدام أحدث تقنيات الويب، مع ضمان استجابة كاملة على جميع الأجهزة لتقديم تجربة بصرية لا تضاهى.">Programming interactive and modern user interfaces using the latest web technologies, ensuring full responsiveness on all devices for an unmatched visual experience.</p>
+                </div>
+                <div class="ea-srv-card">
+                    <div class="ea-srv-icon-wrapper"><i class="fa-brands fa-wordpress"></i></div>
+                    <h3 class="ea-srv-title" data-lang-en="Custom WordPress" data-lang-ar="ووردبريس مخصص">Custom WordPress</h3>
+                    <p class="ea-srv-desc" data-lang-en="Building robust WordPress sites from scratch and customizing Elementor templates to perfectly fit your brand identity without any bloat that slows down the site." data-lang-ar="بناء مواقع ووردبريس قوية من الصفر، وتخصيص قوالب Elementor لتناسب هويتك التجارية بدقة عالية وبدون أي تعقيدات تبطئ الموقع.">Building robust WordPress sites from scratch and customizing Elementor templates to perfectly fit your brand identity without any bloat that slows down the site.</p>
+                </div>
+                <div class="ea-srv-card">
+                    <div class="ea-srv-icon-wrapper"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <h3 class="ea-srv-title" data-lang-en="WooCommerce Stores" data-lang-ar="متاجر ووكومرس">WooCommerce Stores</h3>
+                    <p class="ea-srv-desc" data-lang-en="Setting up and programming complete, fast WooCommerce stores to ensure a safe and seamless shopping experience, significantly boosting your sales conversions." data-lang-ar="إعداد وبرمجة متاجر ووكومرس متكاملة وسريعة، لضمان تجربة تسوق آمنة وسلسة، مما يرفع من نسبة تحويلات مبيعاتك بشكل ملحوظ.">Setting up and programming complete, fast WooCommerce stores to ensure a safe and seamless shopping experience, significantly boosting your sales conversions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المشاريع -->
+        <section class="ea-projects-section" id="projects">
+            <div class="ea-section-header reveal">
+                <p data-lang-en="Previous Work" data-lang-ar="أعمالي السابقة">Previous Work</p>
+                <h2 data-lang-en="Projects I'm Proud Of" data-lang-ar="مشاريع أفخر بها">Projects I'm Proud Of</h2>
+            </div>
+            
+            <div class="ea-filters reveal">
+                <button class="ea-filter-btn active" data-filter="all" data-lang-en="All" data-lang-ar="الكل">All</button>
+                <button class="ea-filter-btn" data-filter="ecommerce" data-lang-en="E-Commerce" data-lang-ar="متاجر إلكترونية">E-Commerce</button>
+                <button class="ea-filter-btn" data-filter="realestate" data-lang-en="Real Estate" data-lang-ar="مواقع عقارية">Real Estate</button>
+                <button class="ea-filter-btn" data-filter="corporate" data-lang-en="Corporate" data-lang-ar="مواقع شركات">Corporate</button>
+                <button class="ea-filter-btn" data-filter="law" data-lang-en="Law Firms" data-lang-ar="مكاتب محاماة">Law Firms</button>
+            </div>
+            
+            <div class="ea-projects-grid" id="ea-projects-grid">
+                <!-- Law -->
+                <div class="ea-grid-card" data-category="law">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">fahdlawyer.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Fahd Law Firm" data-lang-ar="مكتب فهد للمحاماة">Fahd Law Firm</h3><a href="https://fahdlawyer.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="law">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">amjd.law</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-amjd-law-2026-08-04-11_28_48.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Amjd Law Firm" data-lang-ar="مكتب أمجد للمحاماة">Amjd Law Firm</h3><a href="https://amjd.law/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+
+                <!-- Corporate -->
+                <div class="ea-grid-card" data-category="corporate">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">khattwa.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-khattwa-2026-08-04-11_29_30.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Khattwa Co." data-lang-ar="شركة خطوة">Khattwa </h3><a href="https://khattwa.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="corporate">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">keesksa.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-keesksa-2026-08-04-11_30_09.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Kees KSA" data-lang-ar="شركة كيس السعودية">Kees KSA</h3><a href="https://www.keesksa.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="ea-grid-card" data-category="realestate">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">jadwarealestate.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-jadwarealestate-2026-08-04-11_30_48.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Jadwa Real Estate" data-lang-ar="جدوى العقارية">Jadwa Real Estate</h3><a href="https://jadwarealestate.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="realestate">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">innovest-realestate.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-innovest-realestate-2026-08-04-11_31_35.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Innovest Real Estate" data-lang-ar="إنوفيست العقارية">Innovest Real Estate</h3><a href="https://innovest-realestate.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">bandool.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-bandool-2026-08-04-11_33_16.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Bandool Store" data-lang-ar="متجر بندول">Bandool Store</h3><a href="https://bandool.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">asimat-elmajd.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-asimat-elmajd-2026-08-04-11_34_21.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Asimat Elmajd" data-lang-ar="عاصمة المجد">Asimat Elmajd</h3><a href="https://asimat-elmajd.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">bariq-alajhza.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-bariq-alajhza-2026-08-04-11_34_46.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Bariq Alajhza" data-lang-ar="بريق الأجهزة">Bariq Alajhza</h3><a href="https://bariq-alajhza.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">high-endsolutions.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-high-endsolutions-2026-08-04-11_35_42.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="High-End Solutions" data-lang-ar="High-End Solutions">High-End Solutions</h3><a href="https://high-endsolutions.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">built-in1.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-built-in1-2026-08-04-11_37_05.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Built-in 1" data-lang-ar="Built-in 1">Built-in 1</h3><a href="https://built-in1.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">kanzalsahra.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-kanzalsahra-2026-08-04-11_37_49.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Kanz Alsahra" data-lang-ar="كنز الصحراء">Kanz Alsahra</h3><a href="https://kanzalsahra.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">builtt-in.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-builtt-in-2026-08-04-11_39_03.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Builtt-in" data-lang-ar="Builtt-in">Builtt-in</h3><a href="https://builtt-in.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">takief.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-takief-2026-08-04-11_39_37.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Takief" data-lang-ar="مكيف (Takief)">Takief</h3><a href="https://takief.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+                <div class="ea-grid-card" data-category="ecommerce">
+                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">smartdevics.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-smartdevics-2026-08-04-11_40_34.webp');"></div></div></div>
+                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Smart Devices" data-lang-ar="الأجهزة الذكية">Smart Devices</h3><a href="https://smartdevics.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. قسم "لماذا تختارني؟" -->
+        <section class="ea-why-me-section" id="why-me">
+            <div class="ea-section-header reveal">
+                <p data-lang-en="Excellence in Work" data-lang-ar="التميز في العمل">Excellence in Work</p>
+                <h2 data-lang-en="Why choose me for your project?" data-lang-ar="لماذا تختارني لمشروعك؟">Why choose me for your project?</h2>
+            </div>
+            <div class="ea-why-grid reveal">
+                <div class="ea-value-card">
+                    <i class="fa-solid fa-stopwatch ea-value-icon"></i>
+                    <h3 data-lang-en="Respect for Deadlines" data-lang-ar="احترام المواعيد">Respect for Deadlines</h3>
+                    <p data-lang-en="Time is gold. I always commit to delivering projects on the agreed deadline without delay to ensure your business plan runs successfully." data-lang-ar="الوقت من ذهب. ألتزم دائماً بتسليم المشاريع في موعدها المتفق عليه وبدون أي تأخير لضمان سير خطة عملك بنجاح.">Time is gold. I always commit to delivering projects on the agreed deadline without delay to ensure your business plan runs successfully.</p>
+                </div>
+                <div class="ea-value-card">
+                    <i class="fa-solid fa-code ea-value-icon"></i>
+                    <h3 data-lang-en="Clean & Secure Code" data-lang-ar="كود نظيف وآمن">Clean & Secure Code</h3>
+                    <p data-lang-en="I rely on best programming practices to ensure a blazing-fast site, free of vulnerabilities, and scalable for the future." data-lang-ar="أعتمد على أفضل الممارسات البرمجية لضمان موقع سريع جداً، خالي من الثغرات، وقابل للتطوير والتوسع مستقبلاً.">I rely on best programming practices to ensure a blazing-fast site, free of vulnerabilities, and scalable for the future.</p>
+                </div>
+                <div class="ea-value-card">
+                    <i class="fa-solid fa-headset ea-value-icon"></i>
+                    <h3 data-lang-en="Continuous Support" data-lang-ar="تواصل ودعم مستمر">Continuous Support</h3>
+                    <p data-lang-en="I stay in touch with you step-by-step during the work, providing the necessary technical support even after the project is delivered." data-lang-ar="أبقى على تواصل دائم معك خطوة بخطوة أثناء العمل، مع تقديم الدعم الفني اللازم لك حتى بعد تسليم المشروع.">I stay in touch with you step-by-step during the work, providing the necessary technical support even after the project is delivered.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. قسم نموذج التواصل -->
+        <section class="ea-contact-section" id="contact-form">
+            <div class="ea-contact-container reveal">
+                <h3 data-lang-en="Ready to turn your idea into reality?" data-lang-ar="جاهز لتحويل فكرتك إلى واقع؟">Ready to turn your idea into reality?</h3>
+                <p data-lang-en="Send me your project details and I will reply as soon as possible so we can start working together." data-lang-ar="أرسل لي تفاصيل مشروعك وسأقوم بالرد عليك في أقرب وقت لنبدأ العمل معاً.">Send me your project details and I will reply as soon as possible so we can start working together.</p>
+                <form class="ea-form" action="https://formsubmit.co/eabouelenen@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Business Message!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="ea-form-grid">
+                        <div class="ea-input-group">
+                            <input type="text" name="Name" class="ea-form-input" data-placeholder-en="Full Name" data-placeholder-ar="الاسم الكريم" placeholder="Full Name" required>
+                        </div>
+                        <div class="ea-input-group">
+                            <input type="email" name="Email" class="ea-form-input" data-placeholder-en="Email Address" data-placeholder-ar="البريد الإلكتروني" placeholder="Email Address" required>
+                        </div>
+                        <div class="ea-input-group full-width">
+                            <textarea name="Message" class="ea-form-input" rows="4" data-placeholder-en="Tell me about your project idea freely..." data-placeholder-ar="حدثني عن فكرة مشروعك بحرية..." placeholder="Tell me about your project idea freely..." required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="ea-form-btn">
+                        <span data-lang-en="Send Message Now" data-lang-ar="إرسال الرسالة الآن">Send Message Now</span> 
+                        <i class="fa-solid fa-paper-plane ea-dir-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- الفوتر الاحترافي -->
+        <footer class="ea-footer-premium" id="contact">
+            <div class="ea-footer-top reveal">
+                <h2 class="ea-footer-heading" data-lang-en="Have a project idea?<br><span>Let's build it together.</span>" data-lang-ar="لديك فكرة مشروع؟<br><span>دعنا نبنيه معاً.</span>">Have a project idea?<br><span>Let's build it together.</span></h2>
+                <a href="https://wa.me/201065273983" target="_blank" class="ea-footer-cta-btn">
+                    <span data-lang-en="Contact Me Directly" data-lang-ar="تواصل معي مباشرة">Contact Me Directly</span>
+                    <i class="fa-brands fa-whatsapp ea-dir-icon"></i>
+                </a>
+            </div>
+            <div class="ea-footer-grid reveal">
+                <div class="ea-footer-brand">
+                    <a href="#" class="ea-logo">EA<span>.</span></a>
+                    <p data-lang-en="A specialized front-end developer transforming ideas into professional digital platforms that meet the latest global web standards and are fully responsive." data-lang-ar="مطور واجهات أمامية متخصص في تحويل الأفكار إلى منصات رقمية احترافية تواكب أحدث معايير الويب العالمية وسريعة التجاوب.">A specialized front-end developer transforming ideas into professional digital platforms that meet the latest global web standards and are fully responsive.</p>
+                </div>
+                <div class="ea-footer-links">
+                    <h4 data-lang-en="Quick Links" data-lang-ar="روابط سريعة">Quick Links</h4>
+                    <ul>
+                        <li><a href="#about" data-lang-en="About" data-lang-ar="من أنا">About</a></li>
+                        <li><a href="#services" data-lang-en="Services" data-lang-ar="الخدمات">Services</a></li>
+                        <li><a href="#projects" data-lang-en="Portfolio" data-lang-ar="المشاريع">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="ea-footer-social">
+                    <h4 data-lang-en="Contact Links" data-lang-ar="روابط التواصل">Contact Links</h4>
+                    <div class="ea-social-icons">
+                        <a href="https://wa.me/201065273983" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:eabouelenen@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:01065273983"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://www.linkedin.com/in/abouel3nen29" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- سكريبت الموقع -->
+    <script src="script.js"></script>
+</body>
+</html>
