@@ -79,6 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
             pupils.forEach(pupil => pupil.style.transform = `translate(calc(-50% + ${x * 15}px), calc(-50% + ${y * 15}px))`);
         }
     });
+    
+    // Robot Eye Tracking on Scroll (Mobile)
+    window.addEventListener('scroll', () => {
+        if(robotHead && window.innerWidth <= 768) {
+            const rect = robotHead.getBoundingClientRect();
+            const robotCenterY = rect.top + (rect.height / 2);
+            const viewportCenterY = window.innerHeight / 2;
+            let y = (robotCenterY - viewportCenterY) / (window.innerHeight / 2);
+            
+            if (y > 1) y = 1;
+            if (y < -1) y = -1;
+            
+            // If robot is below center (y>0), look up (y_pupil negative).
+            // If robot is above center (y<0), look down (y_pupil positive).
+            robotHead.style.transform = `rotateX(${y * 15}deg)`;
+            pupils.forEach(pupil => pupil.style.transform = `translate(-50%, calc(-50% + ${y * -12}px))`);
+        }
+    });
 
     // أنيميشن الأرقام
     const counters = document.querySelectorAll('.ea-counter');
@@ -139,23 +157,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (preloaderPro) {
         let loadProgress = 0;
+        let phase = 1;
+        const termLine1 = document.getElementById('ea-term-line1');
+        const termLine2 = document.getElementById('ea-term-line2');
+        const status1 = document.getElementById('ea-status1');
+        const status2 = document.getElementById('ea-status2');
+        
+        if (status1) status1.innerHTML = '<span class="ea-blink">_</span>';
 
         const progressInterval = setInterval(() => {
-            loadProgress += Math.floor(Math.random() * 8) + 2;
-            if (loadProgress > 100) loadProgress = 100;
+            if (phase === 1) {
+                loadProgress += Math.floor(Math.random() * 5) + 2;
+                if (loadProgress >= 50) {
+                    loadProgress = 50;
+                    phase = 2;
+                    setTimeout(() => {
+                        if (status1) status1.innerHTML = 'OK';
+                        if (termLine2) termLine2.style.opacity = '1';
+                        if (status2) status2.innerHTML = '<span class="ea-blink">_</span>';
+                        phase = 3;
+                    }, 800);
+                }
+            } else if (phase === 3) {
+                loadProgress += Math.floor(Math.random() * 5) + 2;
+                if (loadProgress >= 100) {
+                    loadProgress = 100;
+                    phase = 4;
+                    setTimeout(() => {
+                        if (status2) status2.innerHTML = 'OK';
+                        setTimeout(() => {
+                            preloaderPro.classList.add('ea-loaded');
+                            setTimeout(() => preloaderPro.style.display = 'none', 1000);
+                        }, 600);
+                    }, 800);
+                }
+            }
 
             if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
             if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
 
-            if (loadProgress >= 100) {
+            if (phase === 4) {
                 clearInterval(progressInterval);
-                
-                setTimeout(() => {
-                    preloaderPro.classList.add('loaded');
-                    setTimeout(() => preloaderPro.style.display = 'none', 1500);
-                }, 400);
             }
-        }, 35);
+        }, 40);
     }
 
     // إمالة نافذة الأكواد في الهيرو

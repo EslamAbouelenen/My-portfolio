@@ -25,21 +25,31 @@
         </div>
         
         <!-- شاشة التحميل الاحترافية (Staggered Slices) -->
-        <!-- New Neon Preloader -->
-        <div id="ea-preloader-pro" class="ea-neon-preloader">
-            <div class="ea-neon-content">
-                <div class="ea-neon-logo-wrapper">
-                    <span class="ea-neon-text">EA</span><span class="ea-neon-dot">.</span>
+        <!-- Holographic Glass Preloader -->
+        <div id="ea-preloader-pro" class="ea-holo-preloader">
+            <div class="ea-holo-bg-grid"></div>
+            
+            <div class="ea-holo-card">
+                <div class="ea-holo-spinner">
+                    <svg viewBox="0 0 100 100" class="ea-spinner-svg">
+                        <circle cx="50" cy="50" r="45" class="ea-spinner-track"></circle>
+                        <circle cx="50" cy="50" r="45" class="ea-spinner-path"></circle>
+                    </svg>
+                    <div class="ea-holo-logo">EA<span>.</span></div>
                 </div>
-                <div class="ea-neon-progress-container">
-                    <div class="ea-neon-progress-track">
-                        <div class="ea-neon-progress-fill" id="ea-progress-bar-pro"></div>
+                
+                <h2 class="ea-holo-welcome" data-lang-en="Welcome to my Portfolio" data-lang-ar="مرحباً بك في معرض أعمالي">Welcome to my Portfolio</h2>
+                
+                <div class="ea-holo-terminal">
+                    <div class="ea-terminal-line" id="ea-term-line1" style="opacity: 1;">Initializing system core... <span class="ea-text-accent ea-term-status" id="ea-status1"></span></div>
+                    <div class="ea-terminal-line" id="ea-term-line2" style="opacity: 0;">Loading visual assets... <span class="ea-text-accent ea-term-status" id="ea-status2"></span></div>
+                    <div class="ea-terminal-progress" id="ea-term-prog" style="opacity: 1;">
+                        <div class="ea-terminal-bar">
+                            <div class="ea-terminal-fill" id="ea-progress-bar-pro"></div>
+                        </div>
+                        <div class="ea-terminal-percent"><span id="ea-preloader-count-pro">0</span>%</div>
                     </div>
                 </div>
-                <div class="ea-neon-counter">
-                    <span id="ea-preloader-count-pro">0</span><span class="ea-neon-percent">%</span>
-                </div>
-                <div class="ea-neon-status">INITIALIZING SYSTEM</div>
             </div>
         </div>
 
