@@ -473,59 +473,75 @@
     #ea-full-portfolio .ea-action-btn { width: 35px !important; height: 35px !important; font-size: 0.9rem !important; }
     #ea-full-portfolio .ea-header-btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
     
-    .ea-hero-section { padding: 120px 0 40px !important; }
-    .ea-hero-heading { font-size: 2.2rem !important; }
-    #ea-full-portfolio[dir="ltr"] .ea-hero-heading { font-size: 2rem !important; }
-    #ea-full-portfolio .ea-hero-roles { font-size: 1.2rem !important; height: auto !important; min-height: 40px !important; }
-    #ea-full-portfolio .ea-hero-desc { font-size: 1rem !important; }
+    .ea-hero-section { padding: 80px 0 30px !important; }
+    .ea-hero-heading { font-size: 2rem !important; }
+    #ea-full-portfolio[dir="ltr"] .ea-hero-heading { font-size: 1.8rem !important; }
+    #ea-full-portfolio .ea-hero-roles { font-size: 1.1rem !important; height: auto !important; min-height: 30px !important; }
+    #ea-full-portfolio .ea-hero-desc { font-size: 0.95rem !important; }
     
     /* Fix Hero Buttons */
     #ea-full-portfolio .ea-hero-buttons { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; width: 100% !important; gap: 10px !important;}
-    #ea-full-portfolio .ea-btn-primary, #ea-full-portfolio .ea-btn-secondary { width: auto !important; padding: 12px 25px !important; font-size: 1rem !important; flex: 1 1 auto; max-width: max-content; }
+    #ea-full-portfolio .ea-btn-primary, #ea-full-portfolio .ea-btn-secondary { width: auto !important; padding: 10px 20px !important; font-size: 0.95rem !important; flex: 1 1 auto; max-width: max-content; }
     
+    /* Fix Code Window Height */
     #ea-full-portfolio .ea-code-window { max-width: 100% !important; margin-top: 20px !important; }
-    #ea-full-portfolio .ea-code-body { padding: 15px !important; font-size: 0.85rem !important; min-height: 150px !important;}
+    #ea-full-portfolio .ea-code-body { padding: 15px !important; font-size: 0.85rem !important; min-height: 250px !important;}
     
-    #ea-full-portfolio .ea-section-header h2 { font-size: 2.1rem !important; }
-    #ea-full-portfolio[dir="ltr"] .ea-section-header h2 { font-size: 1.9rem !important; }
+    /* Global Section Headers */
+    #ea-full-portfolio .ea-section-header { margin-bottom: 30px !important; }
+    #ea-full-portfolio .ea-section-header h2 { font-size: 1.8rem !important; }
+    #ea-full-portfolio[dir="ltr"] .ea-section-header h2 { font-size: 1.6rem !important; }
+    #ea-full-portfolio .ea-section-header p { font-size: 1.1rem !important; margin-bottom: 10px !important;}
     
-    #ea-full-portfolio .ea-about-section { padding: 60px 0 !important; }
-    #ea-full-portfolio .ea-about-text-card { padding: 25px 15px; }
-    #ea-full-portfolio .ea-about-title { font-size: 1.8rem !important; }
-    #ea-full-portfolio[dir="ltr"] .ea-about-title { font-size: 1.6rem !important; }
-    #ea-full-portfolio .ea-counter-wrap h4 { font-size: 2.2rem !important; }
-    #ea-full-portfolio .ea-counter-wrap span { font-size: 1.5rem !important; }
+    /* Skills Section (2 per row on mobile) */
+    #ea-full-portfolio .ea-skill-item { min-width: 130px !important; padding: 20px 10px !important; border-radius: 15px !important;}
+    #ea-full-portfolio .ea-skill-icon { font-size: 2.5rem !important; margin-bottom: 10px !important;}
+    #ea-full-portfolio .ea-skill-name { font-size: 1rem !important; }
+    
+    #ea-full-portfolio .ea-about-section { padding: 50px 0 !important; }
+    #ea-full-portfolio .ea-about-text-card { padding: 20px 15px; }
+    #ea-full-portfolio .ea-about-title { font-size: 1.6rem !important; }
+    #ea-full-portfolio[dir="ltr"] .ea-about-title { font-size: 1.4rem !important; }
+    #ea-full-portfolio .ea-counter-wrap h4 { font-size: 1.8rem !important; }
+    #ea-full-portfolio .ea-counter-wrap span { font-size: 1.2rem !important; }
     #ea-full-portfolio .ea-robot-head { transform: scale(0.6) !important; }
     
-    #ea-full-portfolio .ea-services-section { padding: 60px 0 !important; }
+    /* Services / How can I help you */
+    #ea-full-portfolio .ea-services-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-services-grid { grid-template-columns: 1fr !important; gap: 15px !important; }
-    #ea-full-portfolio .ea-srv-card { padding: 30px 15px; }
+    #ea-full-portfolio .ea-srv-card { padding: 25px 15px !important; border-radius: 20px !important;}
+    #ea-full-portfolio .ea-srv-icon-wrapper { width: 60px !important; height: 60px !important; font-size: 1.8rem !important; margin-bottom: 15px !important; }
+    #ea-full-portfolio .ea-srv-title { font-size: 1.3rem !important; margin-bottom: 10px !important; }
+    #ea-full-portfolio .ea-srv-desc { font-size: 0.95rem !important; line-height: 1.6 !important; }
     
-    #ea-full-portfolio .ea-projects-section { padding: 60px 0 !important; }
+    #ea-full-portfolio .ea-projects-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-projects-grid { grid-template-columns: 1fr !important; gap: 20px !important;}
+    #ea-full-portfolio .ea-grid-mockup { height: 220px !important; }
     
-    /* Fix Project Card Height */
-    #ea-full-portfolio .ea-grid-mockup { height: 240px !important; }
-    
-    /* Fix Filters Slider */
-    #ea-full-portfolio .ea-filters { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 10px !important; margin-bottom: 30px !important; padding-bottom: 10px !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    #ea-full-portfolio .ea-filters { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 10px !important; margin-bottom: 25px !important; padding-bottom: 10px !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     #ea-full-portfolio .ea-filters::-webkit-scrollbar { display: none; }
     #ea-full-portfolio .ea-filter-btn { font-size: 0.9rem !important; padding: 8px 18px !important; flex: 0 0 auto !important; white-space: nowrap !important; text-align: center !important;}
     
-    #ea-full-portfolio .ea-why-me-section { padding: 60px 0 !important; }
+    /* Why choose me */
+    #ea-full-portfolio .ea-why-me-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-why-grid { grid-template-columns: 1fr !important; gap: 15px !important; }
-    #ea-full-portfolio .ea-value-card { padding: 25px 15px; }
+    #ea-full-portfolio .ea-value-card { padding: 25px 15px !important; border-radius: 20px !important;}
+    #ea-full-portfolio .ea-value-icon { font-size: 2.2rem !important; margin-bottom: 15px !important; }
+    #ea-full-portfolio .ea-value-card h3 { font-size: 1.2rem !important; margin-bottom: 10px !important; }
+    #ea-full-portfolio .ea-value-card p { font-size: 0.95rem !important; line-height: 1.6 !important;}
     
-    #ea-full-portfolio .ea-contact-section { padding: 60px 0 40px !important; }
-    #ea-full-portfolio .ea-contact-container { padding: 25px 15px; }
+    /* Contact */
+    #ea-full-portfolio .ea-contact-section { padding: 50px 0 30px !important; }
+    #ea-full-portfolio .ea-contact-container { padding: 25px 15px !important; }
     #ea-full-portfolio .ea-form-grid { grid-template-columns: 1fr !important; }
-    #ea-full-portfolio .ea-contact-container h3 { font-size: 1.6rem !important; }
+    #ea-full-portfolio .ea-contact-container h3 { font-size: 1.5rem !important; margin-bottom: 15px !important;}
     #ea-full-portfolio .ea-form-btn { font-size: 1rem !important; padding: 12px 20px !important; }
     
-    #ea-full-portfolio .ea-footer-premium { padding: 50px 15px 30px !important; }
-    #ea-full-portfolio .ea-footer-top { margin-bottom: 30px !important; padding-bottom: 30px !important; }
-    #ea-full-portfolio .ea-footer-heading { font-size: 2rem !important; margin-bottom: 25px !important;}
-    #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 1.8rem !important; }
+    /* Footer */
+    #ea-full-portfolio .ea-footer-premium { padding: 40px 15px 30px !important; }
+    #ea-full-portfolio .ea-footer-top { margin-bottom: 25px !important; padding-bottom: 25px !important; }
+    #ea-full-portfolio .ea-footer-heading { font-size: 1.8rem !important; margin-bottom: 20px !important; line-height: 1.2 !important;}
+    #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 1.6rem !important; }
     #ea-full-portfolio .ea-footer-cta-btn { font-size: 1rem !important; padding: 12px 25px !important; width: 100% !important; justify-content: center !important;}
 }
 @media (max-width: 480px) {
