@@ -484,6 +484,7 @@
     #ea-full-portfolio .ea-btn-primary, #ea-full-portfolio .ea-btn-secondary { width: auto !important; padding: 10px 20px !important; font-size: 0.95rem !important; flex: 1 1 auto; max-width: max-content; }
     
     /* Fix Code Window Width/Height */
+    #ea-full-portfolio .ea-hero-visual-content { width: 100% !important; }
     #ea-full-portfolio .ea-code-window { width: 100% !important; max-width: 100% !important; margin-top: 20px !important; }
     #ea-full-portfolio .ea-code-body { padding: 15px !important; font-size: 0.85rem !important; min-height: 250px !important;}
     
