@@ -157,49 +157,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (preloaderPro) {
         let loadProgress = 0;
-        let phase = 1;
-        const termLine1 = document.getElementById('ea-term-line1');
-        const termLine2 = document.getElementById('ea-term-line2');
-        const status1 = document.getElementById('ea-status1');
-        const status2 = document.getElementById('ea-status2');
-        
-        if (status1) status1.innerHTML = '<span class="ea-blink">_</span>';
+        const statusSpan = document.getElementById('ea-preloader-status');
 
-        const progressInterval = setInterval(() => {
-            if (phase === 1) {
-                loadProgress += Math.floor(Math.random() * 5) + 2;
-                if (loadProgress >= 50) {
-                    loadProgress = 50;
-                    phase = 2;
-                    setTimeout(() => {
-                        if (status1) status1.innerHTML = 'OK';
-                        if (termLine2) termLine2.style.opacity = '1';
-                        if (status2) status2.innerHTML = '<span class="ea-blink">_</span>';
-                        phase = 3;
-                    }, 800);
-                }
-            } else if (phase === 3) {
-                loadProgress += Math.floor(Math.random() * 5) + 2;
+        // We want the progress bar to wait for the code lines to finish animating before it starts filling up.
+        // The last line animation finishes at ~3.5s, so we delay the JS counting by 3500ms.
+        setTimeout(() => {
+            const progressInterval = setInterval(() => {
+                loadProgress += Math.floor(Math.random() * 4) + 1;
                 if (loadProgress >= 100) {
                     loadProgress = 100;
-                    phase = 4;
+                    clearInterval(progressInterval);
+                    
+                    if (statusSpan) statusSpan.innerText = "Loaded Successfully!";
+                    
                     setTimeout(() => {
-                        if (status2) status2.innerHTML = 'OK';
-                        setTimeout(() => {
-                            preloaderPro.classList.add('ea-loaded');
-                            setTimeout(() => preloaderPro.style.display = 'none', 1000);
-                        }, 600);
+                        preloaderPro.classList.add('ea-loaded');
+                        setTimeout(() => preloaderPro.style.display = 'none', 1000);
                     }, 800);
                 }
-            }
 
-            if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
-            if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
-
-            if (phase === 4) {
-                clearInterval(progressInterval);
-            }
-        }, 40);
+                if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
+                if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
+            }, 30);
+        }, 2500);
     }
 
     // إمالة نافذة الأكواد في الهيرو
