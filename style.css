@@ -605,33 +605,44 @@
         position: relative !important;
     }
     
-    #ea-full-portfolio .ea-services-section::after,
-    #ea-full-portfolio .ea-projects-section::after,
-    #ea-full-portfolio .ea-why-me-section::after {
-        content: '\2192';
-        position: absolute;
-        top: 60%;
-        right: 15px;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: rgb(var(--accent-rgb));
-        background: rgba(var(--nav-bg), 0.7);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(var(--accent-rgb), 0.3);
-        width: 45px;
-        height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 3px;
-        border-radius: 50%;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        animation: pulseSwipeLTR 2s infinite ease-in-out;
-        z-index: 10;
-        pointer-events: none;
-        font-family: Arial, sans-serif;
-    }
+  #ea-full-portfolio .ea-services-section::after,
+#ea-full-portfolio .ea-projects-section::after,
+#ea-full-portfolio .ea-why-me-section::after {
+    content: '\2192';
+    position: absolute;
+    top: 60%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgb(var(--accent-rgb));
+    background: rgba(var(--nav-bg), 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    
+    /* --- أبعاد الدائرة --- */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+    /* --- الكود المسئول عن التوسيط --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* أضف هذا السطر لكي لا يتغير شكل الدائرة إذا استخدمت البادينج */
+    box-sizing: border-box; 
+    
+    /* لرفع السهم للأعلى، قم بزيادة هذا الرقم (مثلا 3px أو 5px) */
+    /* ولتنزيله للأسفل قلل الرقم أو استخدم padding-top */
+    padding-bottom: 4px; 
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    animation: pulseSwipeLTR 2s infinite ease-in-out;
+    z-index: 10;
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+}
     
     #ea-full-portfolio[dir="rtl"] .ea-services-section::after,
     #ea-full-portfolio[dir="rtl"] .ea-projects-section::after,
