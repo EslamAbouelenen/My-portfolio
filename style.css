@@ -150,12 +150,27 @@
     border-right: 2px solid transparent;
     width: 0;
     vertical-align: bottom;
-    animation: typing 1s steps(30, end) forwards 1.0s;
+    animation: typing1 0.5s steps(6, end) forwards 1.0s;
 }
-@keyframes typing {
+@keyframes typing1 {
     from { width: 0; border-right-color: rgb(var(--accent-rgb)); }
     99% { border-right-color: rgb(var(--accent-rgb)); }
-    to { width: 31ch; border-right-color: transparent; }
+    to { width: 6ch; border-right-color: transparent; }
+}
+
+.ea-typewriter-2 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid transparent;
+    width: 0;
+    vertical-align: bottom;
+    animation: typing2 1s steps(23, end) forwards 1.5s;
+}
+@keyframes typing2 {
+    from { width: 0; border-right-color: rgb(var(--accent-rgb)); }
+    99% { border-right-color: rgb(var(--accent-rgb)); }
+    to { width: 24ch; border-right-color: transparent; }
 }
 
 .ea-indent { padding-left: 20px; }
@@ -195,10 +210,11 @@
 }
 
 @media (max-width: 768px) {
-    .ea-holo-card { padding: 30px 20px; width: 92%; min-width: 0; }
-    .ea-holo-welcome { font-size: 1.1rem; }
-    .ea-holo-spinner { width: 90px; height: 90px; }
-    .ea-holo-logo { font-size: 1.8rem; }
+    .ea-code-window-preloader { width: 95%; }
+    .ea-window-body { font-size: 0.75rem; padding: 15px; }
+    .ea-indent { padding-left: 10px; }
+    .ea-indent-2 { padding-left: 20px; }
+    .ea-header-title { font-size: 0.75rem; }
 }
 
 /* --- الهيدر و أزرار التحكم --- */
@@ -587,35 +603,39 @@
     #ea-full-portfolio .ea-projects-section,
     #ea-full-portfolio .ea-why-me-section {
         position: relative !important;
-        padding-bottom: 70px !important; /* Make space for indicator at the bottom */
     }
     
     #ea-full-portfolio .ea-services-section::after,
     #ea-full-portfolio .ea-projects-section::after,
     #ea-full-portfolio .ea-why-me-section::after {
-        content: 'Swipe ➔';
+        content: '\2192';
         position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 1px;
+        top: 60%;
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
         color: rgb(var(--accent-rgb));
-        background: rgba(var(--accent-rgb), 0.1);
-        padding: 6px 15px;
-        border-radius: 50px;
-        border: 1px solid rgba(var(--accent-rgb), 0.2);
+        background: rgba(var(--nav-bg), 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(var(--accent-rgb), 0.3);
+        width: 45px;
+        height: 45px;
+        line-height: 43px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         animation: pulseSwipeLTR 2s infinite ease-in-out;
-        text-transform: uppercase;
-        z-index: 5;
+        z-index: 10;
+        pointer-events: none;
     }
     
     #ea-full-portfolio[dir="rtl"] .ea-services-section::after,
     #ea-full-portfolio[dir="rtl"] .ea-projects-section::after,
     #ea-full-portfolio[dir="rtl"] .ea-why-me-section::after {
-        content: 'اسحب للتصفح ←';
-        letter-spacing: 0;
+        content: '\2190';
+        right: auto;
+        left: 15px;
         animation: pulseSwipeRTL 2s infinite ease-in-out;
     }
     
@@ -651,15 +671,15 @@
 }
 
 @keyframes pulseSwipeLTR {
-    0% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
-    50% { opacity: 1; transform: translateX(-50%) translateX(6px); }
-    100% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+    0% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateY(-50%) translateX(10px); }
+    100% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
 }
 
 @keyframes pulseSwipeRTL {
-    0% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
-    50% { opacity: 1; transform: translateX(-50%) translateX(-6px); }
-    100% { opacity: 0.6; transform: translateX(-50%) translateX(0); }
+    0% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateY(-50%) translateX(-10px); }
+    100% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
 }
 
 @media (max-width: 480px) {
