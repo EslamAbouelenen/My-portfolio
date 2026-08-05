@@ -635,7 +635,7 @@
     
     /* لرفع السهم للأعلى، قم بزيادة هذا الرقم (مثلا 3px أو 5px) */
     /* ولتنزيله للأسفل قلل الرقم أو استخدم padding-top */
-    padding-bottom: 4px; 
+    padding-bottom: 10px; 
     
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     animation: pulseSwipeLTR 2s infinite ease-in-out;
