@@ -613,21 +613,25 @@
         top: 60%;
         right: 15px;
         transform: translateY(-50%);
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
         color: rgb(var(--accent-rgb));
         background: rgba(var(--nav-bg), 0.7);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(var(--accent-rgb), 0.3);
-        width: 45px;
-        height: 45px;
-        line-height: 43px;
-        text-align: center;
+        border: 2px solid rgba(var(--accent-rgb), 0.5);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3px;
         border-radius: 50%;
         box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         animation: pulseSwipeLTR 2s infinite ease-in-out;
         z-index: 10;
         pointer-events: none;
+        font-family: Arial, sans-serif;
     }
     
     #ea-full-portfolio[dir="rtl"] .ea-services-section::after,
