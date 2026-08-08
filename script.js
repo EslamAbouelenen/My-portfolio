@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
                 if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
             }, 30);
-        }, 2500);
+        }, 4500);
     }
 
     // إمالة نافذة الأكواد في الهيرو
