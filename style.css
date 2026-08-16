@@ -192,8 +192,8 @@
 
 /* --- الهيدر و أزرار التحكم (Floating Pill Design) --- */
 #ea-full-portfolio .ea-header { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); width: 95%; max-width: 1100px; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; z-index: 9995; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; border-radius: 50px; box-sizing: border-box; background: transparent; }
-#ea-full-portfolio .ea-header.scrolled { top: 15px; max-width: 1050px; background: var(--nav-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 1px solid var(--glass-border); padding: 12px 30px; }
-#ea-full-portfolio.ea-light-mode .ea-header.scrolled { box-shadow: 0 15px 40px rgba(0, 102, 255, 0.08); }
+#ea-full-portfolio .ea-header.scrolled { top: 15px; max-width: 1050px; background: rgba(120, 120, 120, 0.15) !important; backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 30px; }
+#ea-full-portfolio.ea-light-mode .ea-header.scrolled { box-shadow: 0 15px 40px rgba(0, 102, 255, 0.08); border: 1px solid rgba(0, 0, 0, 0.08); }
 #ea-full-portfolio .ea-logo { font-size: 2rem; font-weight: 900; color: rgb(var(--text-main-rgb)); text-decoration: none; transition: 0.3s; display: flex; align-items: center; }
 #ea-full-portfolio .ea-logo span { color: rgb(var(--accent-rgb)); }
 #ea-full-portfolio .ea-nav-links { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0;}
