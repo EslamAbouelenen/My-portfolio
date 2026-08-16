@@ -4,14 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. نظام تغيير اللغة (الافتراضي EN) ---
     let currentLang = 'en'; 
     const langToggleBtn = document.getElementById('eaLangToggle');
+    let isLangSwitching = false;
+    
+    window.eaScrollSlider = function(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const scrollAmount = container.clientWidth * 0.85; // scroll almost one full card
+        const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+        // Some browsers treat RTL scrollLeft as negative, some as positive, 
+        // but modern browsers usually treat moving "forward" in RTL as negative scrollLeft direction when using scrollBy.
+        // Actually, scrollBy with a negative X usually goes left. In RTL, you want to scroll left to see the next item.
+        container.scrollBy({
+            left: isRtl ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    };
     
     window.eaSetTypingWords = function(words) {
         // سيتم تعريفه لاحقاً في الـ Typing animation
     };
 
     function setLanguage(lang) {
+        isLangSwitching = true;
+        setTimeout(() => isLangSwitching = false, 500);
+        
         currentLang = lang;
-        langToggleBtn.innerText = lang === 'en' ? 'عربي' : 'EN';
+        langToggleBtn.innerText = lang === 'en' ? 'ع' : 'EN';
         root.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
         
         document.querySelectorAll('[data-lang-' + lang + ']').forEach(el => {
@@ -28,6 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ["تطوير الواجهات الأمامية", "برمجة المتاجر الإلكترونية", "تصميم تجربة المستخدم"]
             );
         }
+        
+        // Refresh active IDE file translation
+        const activeIdeFile = document.querySelector('.ea-ide-file.active');
+        if(activeIdeFile) activeIdeFile.click();
+        // Force header to remain visible after layout shift
+        const header = document.getElementById('eaHeader');
+        if (header) {
+            header.style.transform = 'translate(-50%, 0)';
+        }
     }
 
     langToggleBtn.addEventListener('click', () => {
@@ -40,16 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     themeToggleBtn.addEventListener('click', () => {
         isDark = !isDark;
+        const themeIcon = themeToggleBtn.querySelector('i');
         if(isDark) {
             root.classList.remove('ea-light-mode');
-            themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            if(themeIcon) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
         } else {
             root.classList.add('ea-light-mode');
-            themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            if(themeIcon) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
         }
     });
-    // الأيقونة المبدئية عند الوضع المظلم هي الشمس للتبديل للنهاري
-    themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
 
     // تفعيل اللغة الافتراضية
     setLanguage('en');
@@ -221,10 +247,23 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeCode, 2600);
     }
 
-    // الهيدر السكرول
+    // الهيدر السكرول (Smart Header)
     const header = document.getElementById('eaHeader');
+    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+        if (isLangSwitching) { lastScroll = window.scrollY; return; }
+        const currentScroll = window.scrollY;
+        // تأثير الخلفية الزجاجية
+        if (currentScroll > 50) header.classList.add('scrolled'); 
+        else header.classList.remove('scrolled');
+        
+        // إخفاء وإظهار الهيدر بذكاء
+        if (currentScroll > lastScroll && currentScroll > 300) {
+            header.style.transform = 'translate(-50%, -150%)'; // إخفاء لأعلى
+        } else {
+            header.style.transform = 'translate(-50%, 0)'; // إظهار
+        }
+        lastScroll = currentScroll;
     });
 
     // Scroll Reveal
@@ -261,22 +300,49 @@ document.addEventListener('DOMContentLoaded', () => {
         if(typeRolesTarget) typeRolesTarget.textContent = "";
     };
 
-    // فلتر المشاريع
-    const filterBtns = document.querySelectorAll('.ea-filter-btn');
-    const projectCards = document.querySelectorAll('.ea-grid-card');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active');
-            const filterValue = btn.getAttribute('data-filter');
-            projectCards.forEach(card => {
-                card.style.animation = 'none'; card.offsetHeight; 
-                if(filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.setProperty('display', 'flex', 'important'); card.style.animation = 'fadeInUp 0.6s ease forwards';
-                } else { card.style.setProperty('display', 'none', 'important'); }
-            });
+    // --- IDE Project Viewer Logic ---
+    const ideFiles = document.querySelectorAll('.ea-ide-file');
+    const idePreview = document.getElementById('ea-ide-preview');
+    const ideLink = document.getElementById('ea-ide-link');
+    const ideActiveTab = document.getElementById('ea-ide-active-tab');
+    const ideCodeBlock = document.getElementById('ea-ide-code');
+    
+    ideFiles.forEach(file => {
+        file.addEventListener('click', () => {
+            ideFiles.forEach(f => f.classList.remove('active'));
+            file.classList.add('active');
+            
+            const img = file.getAttribute('data-img');
+            const url = file.getAttribute('data-url');
+            const tech = file.getAttribute('data-tech');
+            const titleEn = file.getAttribute('data-title-en');
+            const titleAr = file.getAttribute('data-title-ar');
+            const catEn = file.getAttribute('data-cat-en');
+            const catAr = file.getAttribute('data-cat-ar');
+            const icon = file.getAttribute('data-icon');
+            const color = file.getAttribute('data-color');
+            const filename = file.getAttribute('data-filename');
+            
+            if(idePreview) idePreview.style.backgroundImage = `url('${img}')`;
+            if(ideLink) ideLink.href = url;
+            if(ideActiveTab) ideActiveTab.innerHTML = `<i class="${icon}" style="color: ${color};"></i> <span>${filename}</span>`;
+            
+            if(ideCodeBlock) {
+                const title = currentLang === 'ar' ? titleAr : titleEn;
+                const cat = currentLang === 'ar' ? catAr : catEn;
+                const techArr = tech.split(', ').map(t => `<span class="ea-json-string">"${t}"</span>`).join(', ');
+                
+                ideCodeBlock.innerHTML = `
+{
+  <span class="ea-json-key">"projectName"</span>: <span class="ea-json-string">"${title}"</span>,
+  <span class="ea-json-key">"category"</span>: <span class="ea-json-string">"${cat}"</span>,
+  <span class="ea-json-key">"techStack"</span>: [${techArr}],
+  <span class="ea-json-key">"status"</span>: <span class="ea-json-boolean">true</span>
+}`;
+            }
         });
     });
-    
+
     // سموث سكرول للروابط
     document.querySelectorAll('#ea-full-portfolio a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

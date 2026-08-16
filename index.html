@@ -57,11 +57,11 @@
             </ul>
             
             <div class="ea-header-actions">
-                <button class="ea-action-btn" id="eaThemeToggle" title="Toggle Theme">
-                    <i class="fa-solid fa-sun"></i>
+                <button class="ea-theme-switch" id="eaThemeToggle" title="Toggle Theme">
+                    <span class="ea-switch-circle"><i class="fa-solid fa-moon"></i></span>
                 </button>
                 <button class="ea-action-btn lang-btn" id="eaLangToggle" title="Switch Language">
-                    عربي
+                    ع
                 </button>
                 <a href="#contact-form" class="ea-header-btn" data-lang-en="Contact Me" data-lang-ar="تواصل معي">Contact Me</a>
             </div>
@@ -214,7 +214,7 @@
                 <p data-lang-en="Areas of Expertise" data-lang-ar="مجالات خبرتي">Areas of Expertise</p>
                 <h2 data-lang-en="How can I help you?" data-lang-ar="بماذا يمكنني مساعدتك؟">How can I help you?</h2>
             </div>
-            <div class="ea-services-grid reveal">
+            <div class="ea-services-grid reveal" id="ea-services-grid">
                 <div class="ea-srv-card">
                     <div class="ea-srv-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3 class="ea-srv-title" data-lang-en="Front-End Development" data-lang-ar="تطوير الواجهات الأمامية">Front-End Development</h3>
@@ -231,6 +231,7 @@
                     <p class="ea-srv-desc" data-lang-en="Setting up and programming complete, fast WooCommerce stores to ensure a safe and seamless shopping experience, significantly boosting your sales conversions." data-lang-ar="إعداد وبرمجة متاجر ووكومرس متكاملة وسريعة، لضمان تجربة تسوق آمنة وسلسة، مما يرفع من نسبة تحويلات مبيعاتك بشكل ملحوظ.">Setting up and programming complete, fast WooCommerce stores to ensure a safe and seamless shopping experience, significantly boosting your sales conversions.</p>
                 </div>
             </div>
+            <button class="ea-swipe-btn" onclick="eaScrollSlider('ea-services-grid')" aria-label="Scroll"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
 
         <!-- projects-->
@@ -240,81 +241,134 @@
                 <h2 data-lang-en="Projects I'm Proud Of" data-lang-ar="مشاريع أفخر بها">Projects I'm Proud Of</h2>
             </div>
             
-            <div class="ea-filters reveal">
-                <button class="ea-filter-btn active" data-filter="all" data-lang-en="All" data-lang-ar="الكل">All</button>
-                <button class="ea-filter-btn" data-filter="ecommerce" data-lang-en="E-Commerce" data-lang-ar="متاجر إلكترونية">E-Commerce</button>
-                <button class="ea-filter-btn" data-filter="realestate" data-lang-en="Real Estate" data-lang-ar="مواقع عقارية">Real Estate</button>
-                <button class="ea-filter-btn" data-filter="corporate" data-lang-en="Corporate" data-lang-ar="مواقع شركات">Corporate</button>
-                <button class="ea-filter-btn" data-filter="law" data-lang-en="Law Firms" data-lang-ar="مكاتب محاماة">Law Firms</button>
-            </div>
-            
-            <div class="ea-projects-grid" id="ea-projects-grid">
-                <!-- Law -->
-                <div class="ea-grid-card" data-category="law">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">fahdlawyer.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Fahd Law Firm" data-lang-ar="مكتب فهد للمحاماة">Fahd Law Firm</h3><a href="https://fahdlawyer.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="law">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">amjd.law</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-amjd-law-2026-08-04-11_28_48.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Amjd Law Firm" data-lang-ar="مكتب أمجد للمحاماة">Amjd Law Firm</h3><a href="https://amjd.law/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+            <!-- IDE / Code Editor Layout -->
+            <div class="ea-ide-container reveal">
+                <!-- Sidebar (File Explorer) -->
+                <div class="ea-ide-sidebar">
+                    <div class="ea-ide-sidebar-header">
+                        <span data-lang-en="EXPLORER" data-lang-ar="المستعرض" class="ea-explorer-text">EXPLORER</span>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    
+                    <!-- Law Folder -->
+                    <div class="ea-ide-folder">
+                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
+                            <i class="fa-solid fa-chevron-down ea-chevron"></i>
+                            <i class="fa-solid fa-folder" style="color: #FFBD2E;"></i>
+                            <span data-lang-en="Law_Firms" data-lang-ar="مكاتب_محاماة">Law_Firms</span>
+                        </div>
+                        <div class="ea-ide-folder-content">
+                            <div class="ea-ide-file active" data-id="fahd" data-img="images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp" data-url="https://fahdlawyer.com/" data-tech="WordPress, Elementor, PHP" data-title-en="Fahd Law Firm" data-title-ar="مكتب فهد للمحاماة" data-cat-en="Law Firm" data-cat-ar="مكتب محاماة" data-icon="fa-brands fa-js" data-color="#FFDF00" data-filename="fahd_lawyer.js">
+                                <i class="fa-brands fa-js" style="color: #FFDF00;"></i> fahd_lawyer.js
+                            </div>
+                            <div class="ea-ide-file" data-id="amjd" data-img="images/screencapture-amjd-law-2026-08-04-11_28_48.webp" data-url="https://amjd.law/" data-tech="WordPress, Custom Theme" data-title-en="Amjd Law Firm" data-title-ar="مكتب أمجد للمحاماة" data-cat-en="Law Firm" data-cat-ar="مكتب محاماة" data-icon="fa-brands fa-js" data-color="#FFDF00" data-filename="amjd_law.js">
+                                <i class="fa-brands fa-js" style="color: #FFDF00;"></i> amjd_law.js
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Corporate Folder -->
+                    <div class="ea-ide-folder">
+                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
+                            <i class="fa-solid fa-chevron-down ea-chevron"></i>
+                            <i class="fa-solid fa-folder" style="color: #27C93F;"></i>
+                            <span data-lang-en="Corporate" data-lang-ar="شركات">Corporate</span>
+                        </div>
+                        <div class="ea-ide-folder-content">
+                            <div class="ea-ide-file" data-id="khattwa" data-img="images/screencapture-khattwa-2026-08-04-11_29_30.webp" data-url="https://khattwa.com/" data-tech="HTML5, CSS3, JS, PHP" data-title-en="Khattwa Co." data-title-ar="شركة خطوة" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-html5" data-color="#E34F26" data-filename="khattwa.html">
+                                <i class="fa-brands fa-html5" style="color: #E34F26;"></i> khattwa.html
+                            </div>
+                            <div class="ea-ide-file" data-id="keesksa" data-img="images/screencapture-keesksa-2026-08-04-11_30_09.webp" data-url="https://www.keesksa.com/" data-tech="WordPress, Elementor Pro" data-title-en="Kees KSA" data-title-ar="شركة كيس السعودية" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-css3-alt" data-color="#1572B6" data-filename="keesksa.css">
+                                <i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i> keesksa.css
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real Estate Folder -->
+                    <div class="ea-ide-folder collapsed">
+                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
+                            <i class="fa-solid fa-chevron-right ea-chevron"></i>
+                            <i class="fa-solid fa-folder" style="color: #FF5F56;"></i>
+                            <span data-lang-en="Real_Estate" data-lang-ar="عقارات">Real_Estate</span>
+                        </div>
+                        <div class="ea-ide-folder-content">
+                            <div class="ea-ide-file" data-id="jadwa" data-img="images/screencapture-jadwarealestate-2026-08-04-11_30_48.webp" data-url="https://jadwarealestate.com/" data-tech="WordPress, Custom Post Types" data-title-en="Jadwa Real Estate" data-title-ar="جدوى العقارية" data-cat-en="Real Estate" data-cat-ar="موقع عقاري" data-icon="fa-brands fa-react" data-color="#61DAFB" data-filename="jadwa.jsx">
+                                <i class="fa-brands fa-react" style="color: #61DAFB;"></i> jadwa.jsx
+                            </div>
+                            <div class="ea-ide-file" data-id="innovest" data-img="images/screencapture-innovest-realestate-2026-08-04-11_31_35.webp" data-url="https://innovest-realestate.com/" data-tech="HTML, CSS, JS, API" data-title-en="Innovest Real Estate" data-title-ar="إنوفيست العقارية" data-cat-en="Real Estate" data-cat-ar="موقع عقاري" data-icon="fa-brands fa-react" data-color="#61DAFB" data-filename="innovest.jsx">
+                                <i class="fa-brands fa-react" style="color: #61DAFB;"></i> innovest.jsx
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-Commerce Folder -->
+                    <div class="ea-ide-folder collapsed">
+                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
+                            <i class="fa-solid fa-chevron-right ea-chevron"></i>
+                            <i class="fa-solid fa-folder" style="color: #A371F7;"></i>
+                            <span data-lang-en="E_Commerce" data-lang-ar="متاجر_إلكترونية">E_Commerce</span>
+                        </div>
+                        <div class="ea-ide-folder-content">
+                            <div class="ea-ide-file" data-id="bandool" data-img="images/screencapture-bandool-2026-08-04-11_33_16.webp" data-url="https://bandool.com/" data-tech="WooCommerce, Payment Gateway" data-title-en="Bandool Store" data-title-ar="متجر بندول" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bandool.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bandool.php
+                            </div>
+                            <div class="ea-ide-file" data-id="asimat" data-img="images/screencapture-asimat-elmajd-2026-08-04-11_34_21.webp" data-url="https://asimat-elmajd.com/" data-tech="WooCommerce, Multi-vendor" data-title-en="Asimat Elmajd" data-title-ar="عاصمة المجد" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="asimat.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> asimat.php
+                            </div>
+                            <div class="ea-ide-file" data-id="bariq" data-img="images/screencapture-bariq-alajhza-2026-08-04-11_34_46.webp" data-url="https://bariq-alajhza.com/" data-tech="WooCommerce, Speed Optimization" data-title-en="Bariq Alajhza" data-title-ar="بريق الأجهزة" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bariq.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bariq.php
+                            </div>
+                            <div class="ea-ide-file" data-id="highend" data-img="images/screencapture-high-endsolutions-2026-08-04-11_35_42.webp" data-url="https://high-endsolutions.com/" data-tech="WooCommerce, B2B" data-title-en="High-End Solutions" data-title-ar="High-End Solutions" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="highend.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> highend.php
+                            </div>
+                            <div class="ea-ide-file" data-id="builtin" data-img="images/screencapture-built-in1-2026-08-04-11_37_05.webp" data-url="https://built-in1.com/" data-tech="WooCommerce, Minimal Design" data-title-en="Built-in 1" data-title-ar="Built-in 1" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="builtin.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> builtin.php
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Corporate -->
-                <div class="ea-grid-card" data-category="corporate">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">khattwa.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-khattwa-2026-08-04-11_29_30.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Khattwa Co." data-lang-ar="شركة خطوة">Khattwa </h3><a href="https://khattwa.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="corporate">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">keesksa.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-keesksa-2026-08-04-11_30_09.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Kees KSA" data-lang-ar="شركة كيس السعودية">Kees KSA</h3><a href="https://www.keesksa.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-
-                <!-- Real Estate -->
-                <div class="ea-grid-card" data-category="realestate">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">jadwarealestate.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-jadwarealestate-2026-08-04-11_30_48.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Jadwa Real Estate" data-lang-ar="جدوى العقارية">Jadwa Real Estate</h3><a href="https://jadwarealestate.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="realestate">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">innovest-realestate.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-innovest-realestate-2026-08-04-11_31_35.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Innovest Real Estate" data-lang-ar="إنوفيست العقارية">Innovest Real Estate</h3><a href="https://innovest-realestate.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-
-                <!-- E-Commerce -->
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">bandool.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-bandool-2026-08-04-11_33_16.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Bandool Store" data-lang-ar="متجر بندول">Bandool Store</h3><a href="https://bandool.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">asimat-elmajd.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-asimat-elmajd-2026-08-04-11_34_21.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Asimat Elmajd" data-lang-ar="عاصمة المجد">Asimat Elmajd</h3><a href="https://asimat-elmajd.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">bariq-alajhza.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-bariq-alajhza-2026-08-04-11_34_46.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Bariq Alajhza" data-lang-ar="بريق الأجهزة">Bariq Alajhza</h3><a href="https://bariq-alajhza.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">high-endsolutions.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-high-endsolutions-2026-08-04-11_35_42.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="High-End Solutions" data-lang-ar="High-End Solutions">High-End Solutions</h3><a href="https://high-endsolutions.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">built-in1.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-built-in1-2026-08-04-11_37_05.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Built-in 1" data-lang-ar="Built-in 1">Built-in 1</h3><a href="https://built-in1.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">kanzalsahra.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-kanzalsahra-2026-08-04-11_37_49.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Kanz Alsahra" data-lang-ar="كنز الصحراء">Kanz Alsahra</h3><a href="https://kanzalsahra.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">builtt-in.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-builtt-in-2026-08-04-11_39_03.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Builtt-in" data-lang-ar="Builtt-in">Builtt-in</h3><a href="https://builtt-in.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">takief.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-takief-2026-08-04-11_39_37.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Takief" data-lang-ar="مكيف (Takief)">Takief</h3><a href="https://takief.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
-                </div>
-                <div class="ea-grid-card" data-category="ecommerce">
-                    <div class="ea-grid-mockup"><div class="ea-mockup-header"><div class="ea-mockup-dots"><span></span><span></span><span></span></div><div class="ea-mockup-url">smartdevics.com</div></div><div class="ea-mockup-body"><div class="ea-scrolling-img" style="background-image: url('images/screencapture-smartdevics-2026-08-04-11_40_34.webp');"></div></div></div>
-                    <div class="ea-grid-info"><h3 class="ea-grid-title" data-lang-en="Smart Devices" data-lang-ar="الأجهزة الذكية">Smart Devices</h3><a href="https://smartdevics.com/" target="_blank" class="ea-grid-link"><span data-lang-en="Visit" data-lang-ar="زيارة">Visit</span> <i class="fa-solid fa-arrow-right ea-dir-icon"></i></a></div>
+                <!-- Main Workspace -->
+                <div class="ea-ide-workspace" style="position: relative;">
+                    <!-- Tabs -->
+                    <div class="ea-ide-tabs" id="ea-ide-tabs">
+                        <div class="ea-ide-tab active" id="ea-ide-active-tab">
+                            <i class="fa-brands fa-js" style="color: #FFDF00;"></i> <span>fahd_lawyer.js</span>
+                        </div>
+                    </div>
+                    <div class="ea-mac-btns">
+                        <span></span><span></span><span></span>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="ea-ide-content">
+                        <!-- Project Image Preview -->
+                        <div class="ea-ide-preview" id="ea-ide-preview" style="background-image: url('images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp');">
+                            <div class="ea-scroll-hint">
+                                <i class="fa-solid fa-chevron-up"></i>
+                                <div class="ea-custom-mouse"></div>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <a href="https://fahdlawyer.com/" target="_blank" class="ea-ide-link-btn" id="ea-ide-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Visit Site" data-lang-ar="زيارة الموقع">Visit Site</span>
+                            </a>
+                        </div>
+                        
+                        <!-- JSON Data block -->
+                        <div class="ea-ide-json-block">
+                            <div class="ea-ide-line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                            </div>
+                            <pre><code class="language-json" id="ea-ide-code">
+{
+  <span class="ea-json-key">"projectName"</span>: <span class="ea-json-string">"Fahd Law Firm"</span>,
+  <span class="ea-json-key">"category"</span>: <span class="ea-json-string">"Law Firm"</span>,
+  <span class="ea-json-key">"techStack"</span>: [<span class="ea-json-string">"WordPress, Elementor, PHP"</span>],
+  <span class="ea-json-key">"status"</span>: <span class="ea-json-boolean">true</span>
+}
+                            </code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -325,7 +379,7 @@
                 <p data-lang-en="Excellence in Work" data-lang-ar="التميز في العمل">Excellence in Work</p>
                 <h2 data-lang-en="Why choose me for your project?" data-lang-ar="لماذا تختارني لمشروعك؟">Why choose me for your project?</h2>
             </div>
-            <div class="ea-why-grid reveal">
+            <div class="ea-why-grid reveal" id="ea-why-grid">
                 <div class="ea-value-card">
                     <i class="fa-solid fa-stopwatch ea-value-icon"></i>
                     <h3 data-lang-en="Respect for Deadlines" data-lang-ar="احترام المواعيد">Respect for Deadlines</h3>
@@ -342,6 +396,7 @@
                     <p data-lang-en="I stay in touch with you step-by-step during the work, providing the necessary technical support even after the project is delivered." data-lang-ar="أبقى على تواصل دائم معك خطوة بخطوة أثناء العمل، مع تقديم الدعم الفني اللازم لك حتى بعد تسليم المشروع.">I stay in touch with you step-by-step during the work, providing the necessary technical support even after the project is delivered.</p>
                 </div>
             </div>
+            <button class="ea-swipe-btn" onclick="eaScrollSlider('ea-why-grid')" aria-label="Scroll"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
 
         <!-- contact me -->
