@@ -1,86 +1,60 @@
-/* --- المتغيرات والتنسيقات الأساسية (تدعم الدارك واللايت) --- */
 #ea-full-portfolio {
     --bg-rgb: 3, 4, 7;
     --text-main-rgb: 255, 255, 255;
     --text-muted: #B4BCD0;
     --accent-rgb: 0, 229, 255;
-    
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(255, 255, 255, 0.05);
-    
     --card-bg: rgba(10, 15, 25, 0.4);
     --card-bg-hover: rgba(10, 15, 25, 0.7);
-    
     --shadow-base: rgba(0, 0, 0, 0.5);
     --shadow-strong: rgba(0, 0, 0, 0.6);
-    
     --btn-primary-bg: #ffffff;
     --btn-primary-color: #000000;
     --btn-hover-text: #000000;
-    
     --input-bg: rgba(0,0,0,0.3);
     --nav-bg: rgba(3, 4, 7, 0.9);
-    
     --robot-head-grad: linear-gradient(145deg, #1a2235, #080b12);
     --robot-face-bg: #02040a;
-    
     font-family: 'Outfit', 'Tajawal', sans-serif; 
     background-color: rgb(var(--bg-rgb)); 
     color: rgb(var(--text-main-rgb)); 
     overflow-x: hidden; transition: background-color 0.4s, color 0.4s;
     width: 100%; position: relative; min-height: 100vh;
 }
-
-/* --- متغيرات الوضع النهاري (Light Mode) - تم تحسينها لفخامة أعلى وأناقة كاملة --- */
 #ea-full-portfolio.ea-light-mode {
     --bg-rgb: 248, 249, 252;
     --text-main-rgb: 15, 23, 42;
     --text-muted: #475569;
     --accent-rgb: 0, 102, 255;
-    
     --glass-bg: #ffffff;
     --glass-border: rgba(0, 0, 0, 0.08);
-    
     --card-bg: #ffffff;
     --card-bg-hover: #ffffff;
-    
     --shadow-base: rgba(0, 0, 0, 0.03);
     --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 15px 35px rgba(0, 102, 255, 0.12);
-    
     --btn-primary-bg: #0066ff;
     --btn-primary-color: #ffffff;
     --btn-hover-text: #ffffff;
-    
     --input-bg: #f1f5f9;
     --nav-bg: rgba(248, 249, 252, 0.92);
-    
     --robot-head-grad: linear-gradient(145deg, #e2e8f0, #ffffff);
     --robot-face-bg: #0f172a;
 }
-
-/* --- إخفاء الكشاف المظلم تماماً في اللايت مود لوضوح النصوص --- */
 #ea-full-portfolio.ea-light-mode #ea-flashlight {
     display: none !important;
 }
-
-/* --- دعم تغيير اتجاهات الأسهم تلقائياً --- */
 #ea-full-portfolio[dir="rtl"] .ea-dir-icon { transform: scaleX(-1); }
-
-/* --- الكشاف وجزيئات الخلفية --- */
 #ea-flashlight { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9990; background: radial-gradient(circle 800px at var(--mouse-x, 50vw) var(--mouse-y, 50vh), rgba(var(--accent-rgb), 0.04) 0%, transparent 25%, rgba(var(--bg-rgb), 0.7) 100%); transition: background 0.4s; }
-
 #ea-full-portfolio .ea-ambient-orbs { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; overflow: hidden; }
 #ea-full-portfolio .ea-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.2; animation: ea-orb-float 15s ease-in-out infinite alternate; }
 #ea-full-portfolio .ea-orb-1 { width: 500px; height: 500px; background: rgba(var(--accent-rgb), 0.3); top: -10%; left: -10%; }
 #ea-full-portfolio .ea-orb-2 { width: 600px; height: 600px; background: rgba(0, 85, 255, 0.15); top: 50%; right: -15%; animation-delay: -5s; }
 @keyframes ea-orb-float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(100px, -100px) scale(1.2); } }
-
 #ea-full-portfolio .ea-particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 #ea-full-portfolio .ea-particle { position: absolute; bottom: -20px; width: 3px; height: 3px; background: rgb(var(--accent-rgb)); border-radius: 50%; box-shadow: 0 0 10px rgb(var(--accent-rgb)); animation: ea-float-up linear infinite; opacity: 0; }
 @keyframes ea-float-up { 0% { transform: translateY(0) scale(1); opacity: 0; } 20% { opacity: 0.6; } 80% { opacity: 0.6; } 100% { transform: translateY(-100vh) scale(1.5); opacity: 0; } }
-
-/* --- Code Window Preloader --- */
 #ea-preloader-pro {
     position: fixed; inset: 0; z-index: 999999; pointer-events: auto;
     display: flex; justify-content: center; align-items: center; background: #030407;
@@ -89,7 +63,6 @@
 }
 #ea-full-portfolio.ea-light-mode #ea-preloader-pro { background: #f8f9fc; }
 #ea-preloader-pro.ea-loaded { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.05); }
-
 .ea-code-window-preloader {
     width: 90%; max-width: 500px;
     background: #05070a; border-radius: 12px;
@@ -103,11 +76,9 @@
     background: #ffffff; border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
 }
-
 @keyframes ea-slide-up-fade {
     to { transform: translateY(0); opacity: 1; }
 }
-
 .ea-window-header {
     background: #080a10; padding: 10px 15px; display: flex; align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.02); position: relative;
@@ -115,21 +86,17 @@
 #ea-full-portfolio.ea-light-mode .ea-window-header {
     background: #f1f5f9; border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-
 .ea-dots { display: flex; gap: 8px; }
 .ea-dot { width: 12px; height: 12px; border-radius: 50%; }
 .ea-red { background: #ff5f56; }
 .ea-yellow { background: #ffbd2e; }
 .ea-green { background: #27c93f; }
-
 .ea-header-title {
     position: absolute; left: 50%; transform: translateX(-50%);
     font-size: 0.85rem; color: #64748b; font-family: 'Outfit', sans-serif;
 }
-
 .ea-window-body { padding: 25px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; }
 #ea-full-portfolio.ea-light-mode .ea-window-body { color: #1e293b; }
-
 .ea-code-line { 
     margin-bottom: 5px; 
     width: 0;
@@ -139,16 +106,13 @@
     animation: ea-type-line var(--dur) steps(var(--chars), end) forwards var(--delay);
     box-sizing: content-box;
 }
-
 @keyframes ea-type-line { 
     from { width: 0; border-right-color: rgb(var(--accent-rgb)); }
     99% { border-right-color: rgb(var(--accent-rgb)); }
     to { width: calc(var(--chars) * 1ch); border-right-color: transparent; }
 }
-
 .ea-indent { padding-left: 20px; }
 .ea-indent-2 { padding-left: 40px; }
-
 .ea-keyword { color: rgb(var(--accent-rgb)); opacity: 0.9; }
 .ea-variable { color: var(--text-muted); }
 .ea-string { color: #ffffff; }
@@ -156,7 +120,6 @@
 .ea-method { color: rgb(var(--accent-rgb)); }
 .ea-number { color: #ffffff; font-weight: bold; }
 .ea-operator { color: var(--text-muted); }
-
 #ea-full-portfolio.ea-light-mode .ea-keyword { color: rgb(var(--accent-rgb)); opacity: 0.9; }
 #ea-full-portfolio.ea-light-mode .ea-variable { color: var(--text-muted); }
 #ea-full-portfolio.ea-light-mode .ea-string { color: #0f172a; font-weight: 500; }
@@ -164,24 +127,20 @@
 #ea-full-portfolio.ea-light-mode .ea-method { color: rgb(var(--accent-rgb)); }
 #ea-full-portfolio.ea-light-mode .ea-number { color: #0f172a; font-weight: bold; }
 #ea-full-portfolio.ea-light-mode .ea-operator { color: var(--text-muted); }
-
 .ea-cursor {
     animation: ea-blink 1s step-end infinite;
     color: rgb(var(--accent-rgb)); font-weight: bold;
 }
 @keyframes ea-blink { 50% { opacity: 0; } }
-
 .ea-code-progress-bar {
     margin-top: 25px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;
     overflow: hidden; opacity: 0; animation: ea-fade-line 0.3s forwards 3.5s;
 }
 #ea-full-portfolio.ea-light-mode .ea-code-progress-bar { background: rgba(0,0,0,0.1); }
-
 .ea-code-progress-fill {
     height: 100%; width: 0%; background: rgb(var(--accent-rgb));
     box-shadow: 0 0 10px rgb(var(--accent-rgb)); transition: width 0.1s ease;
 }
-
 @media (max-width: 768px) {
     .ea-code-window-preloader { width: 95%; }
     .ea-window-body { font-size: 0.75rem; padding: 15px; }
@@ -189,8 +148,6 @@
     .ea-indent-2 { padding-left: 20px; }
     .ea-header-title { font-size: 0.75rem; }
 }
-
-/* --- الهيدر و أزرار التحكم (Floating Pill Design) --- */
 #ea-full-portfolio .ea-header { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); width: 95%; max-width: 1100px; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; z-index: 9995; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; border-radius: 50px; box-sizing: border-box; background: transparent; }
 #ea-full-portfolio .ea-header.scrolled { top: 15px; max-width: 1050px; background: rgba(120, 120, 120, 0.15) !important; backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 30px; }
 #ea-full-portfolio.ea-light-mode .ea-header.scrolled { box-shadow: 0 15px 40px rgba(0, 102, 255, 0.08); border: 1px solid rgba(0, 0, 0, 0.08); }
@@ -201,7 +158,6 @@
 #ea-full-portfolio .ea-nav-links a::after { content: ''; position: absolute; inset: 0; background: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.2); border-radius: 30px; z-index: -1; transform: scale(0.8); opacity: 0; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
 #ea-full-portfolio .ea-nav-links a:hover::after { transform: scale(1); opacity: 1; }
 #ea-full-portfolio .ea-nav-links a:hover { color: rgb(var(--accent-rgb)); text-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3); }
-
 #ea-full-portfolio .ea-header-actions { display: flex; align-items: center; gap: 12px; direction: ltr;}
 #ea-full-portfolio .ea-action-btn { width: 42px; height: 42px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); color: rgb(var(--text-main-rgb)); cursor: pointer; font-size: 1.1rem; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; justify-content: center; align-items: center; }
 #ea-full-portfolio .ea-action-btn.lang-btn { width: 48px; border-radius: 24px; font-weight: 700; font-size: 0.95rem; }
@@ -209,33 +165,25 @@
 #ea-full-portfolio .ea-action-btn.lang-btn:hover { transform: scale(1.1); }
 #ea-full-portfolio .ea-header-btn { padding: 12px 28px; border: 1px solid rgba(var(--accent-rgb), 0.3); background: rgba(var(--accent-rgb), 0.05); color: rgb(var(--text-main-rgb)); border-radius: 30px; text-decoration: none; font-weight: 700; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); font-size: 1.05rem; }
 #ea-full-portfolio .ea-header-btn:hover { background: rgb(var(--accent-rgb)); color: var(--btn-hover-text); box-shadow: 0 10px 25px rgba(var(--accent-rgb), 0.4); transform: scale(1.05); }
-
-/* Theme Toggle Switch */
 #ea-full-portfolio .ea-theme-switch { width: 56px; height: 32px; border-radius: 30px; background: var(--glass-bg); border: 1px solid var(--glass-border); position: relative; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; padding: 0; box-sizing: border-box; flex-shrink: 0; }
 #ea-full-portfolio .ea-theme-switch:hover { border-color: rgb(var(--accent-rgb)); box-shadow: 0 5px 15px rgba(var(--accent-rgb), 0.2); }
 #ea-full-portfolio .ea-switch-circle { width: 22px; height: 22px; border-radius: 50%; background: rgb(var(--accent-rgb)); transition: left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s; display: flex; justify-content: center; align-items: center; position: absolute; left: 4px; }
 #ea-full-portfolio .ea-switch-circle i { font-size: 11px; color: var(--btn-hover-text); transition: 0.3s; }
 #ea-full-portfolio.ea-light-mode .ea-switch-circle { left: 28px; background: #333; }
 #ea-full-portfolio.ea-light-mode .ea-switch-circle i { color: #fff; }
-
-/* --- العناوين المشتركة --- */
 #ea-full-portfolio .ea-section-header { text-align: center !important; margin-bottom: 60px !important; }
 #ea-full-portfolio .ea-section-header p { color: rgb(var(--accent-rgb)) !important; font-weight: 700 !important; font-size: 1.3rem !important; margin-bottom: 15px !important; }
 #ea-full-portfolio .ea-section-header h2 { font-size: 4rem !important; font-weight: 900 !important; color: rgb(var(--text-main-rgb)) !important; }
-
-/* --- الهيرو --- */
 .ea-hero-section { position: relative; width: 100% !important; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 0 60px !important; z-index: 2; box-sizing: border-box; }
 .ea-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(var(--glass-border) 1px, transparent 1px), linear-gradient(90deg, var(--glass-border) 1px, transparent 1px); background-size: 50px 50px; }
 .ea-hero-bounds { position: relative; z-index: 10; width: 90% !important; max-width: 1250px !important; margin: 0 auto !important; display: flex; align-items: center; justify-content: space-between; gap: 60px !important; }
 .ea-hero-text-content { flex: 1.15 !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: start !important; }
-
 #ea-full-portfolio .ea-hero-badge-wrap { position: relative; display: inline-flex; margin-bottom: 30px; border-radius: 50px; padding: 2px; overflow: hidden; }
 #ea-full-portfolio .ea-hero-badge-wrap::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 70%, rgb(var(--accent-rgb)) 100%); animation: ea-badge-spin 2s linear infinite; }
 @keyframes ea-badge-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 #ea-full-portfolio .ea-badge-content { background: var(--nav-bg); backdrop-filter: blur(10px); border-radius: 50px; padding: 10px 24px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
 #ea-full-portfolio .ea-badge-text { color: rgb(var(--text-main-rgb)) !important; font-size: 1.05rem !important; font-weight: 700 !important; margin: 0 !important; padding: 0 !important; line-height: 1 !important; }
 #ea-full-portfolio .ea-glow-dot { width: 10px !important; height: 10px !important; border-radius: 50% !important; background: rgb(var(--accent-rgb)) !important; box-shadow: 0 0 12px rgb(var(--accent-rgb)) !important; animation: ea-blink 1.5s infinite; display: block !important; }
-
 #ea-full-portfolio .ea-hero-heading { font-size: 4.5rem !important; font-weight: 900 !important; line-height: 1.25 !important; color: rgb(var(--text-main-rgb)) !important; margin-bottom: 25px !important; letter-spacing: -1px !important; }
 #ea-full-portfolio .ea-highlight-text { color: rgb(var(--accent-rgb)) !important; text-shadow: 0 0 30px rgba(var(--accent-rgb), 0.3) !important; }
 #ea-full-portfolio .ea-hero-roles { font-size: 1.8rem !important; font-weight: 800 !important; color: rgb(var(--text-main-rgb)) !important; margin-bottom: 30px !important; height: 40px !important; line-height: 1.5 !important; }
@@ -246,9 +194,7 @@
 #ea-full-portfolio .ea-btn-primary:hover { background: rgb(var(--accent-rgb)) !important; color: var(--btn-hover-text) !important; box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.4) !important; transform: translateY(-4px) !important; }
 #ea-full-portfolio .ea-btn-secondary { display: inline-flex !important; justify-content: center !important; align-items: center !important; padding: 16px 42px !important; background: transparent !important; border: 1px solid var(--glass-border) !important; color: rgb(var(--text-main-rgb)) !important; border-radius: 50px !important; font-weight: 700 !important; font-size: 1.15rem !important; text-decoration: none !important; transition: all 0.3s ease !important; }
 #ea-full-portfolio .ea-btn-secondary:hover { background: var(--glass-bg) !important; border-color: rgb(var(--accent-rgb)) !important; transform: translateY(-4px) !important; }
-
 .ea-hero-visual-content { flex: 0.85 !important; display: flex !important; justify-content: center !important; perspective: 1200px !important; }
-/* الكود ويندو دائماً داكنة لتعطي إحساس التيرمينال الحقيقي */
 #ea-full-portfolio .ea-code-window { width: 100% !important; max-width: 480px !important; background: rgba(10, 12, 16, 0.8) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; border-radius: 16px !important; overflow: hidden !important; backdrop-filter: blur(25px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.5) !important; transition: transform 0.1s ease-out !important; direction: ltr !important; text-align: left !important; }
 #ea-full-portfolio .ea-code-header { background: rgba(255, 255, 255, 0.05) !important; padding: 15px 20px !important; display: flex !important; gap: 10px !important; align-items: center !important; border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; }
 #ea-full-portfolio .ea-mac-btn { width: 14px !important; height: 14px !important; border-radius: 50% !important; display: inline-block !important; }
@@ -257,42 +203,31 @@
 #ea-full-portfolio .ea-mac-btn.max { background: #27C93F !important; }
 #ea-full-portfolio .ea-code-body { padding: 35px 30px !important; font-family: 'Courier New', Courier, monospace !important; font-size: 1.05rem !important; line-height: 1.8 !important; color: #00E5FF !important; min-height: 250px !important; }
 #ea-full-portfolio .ea-code-cursor { color: #fff !important; animation: ea-blink 1s infinite !important; font-weight: bold !important; }
-
-/* --- 1. قسم من أنا --- */
 #ea-full-portfolio .ea-about-section { padding: 150px 0; position: relative; z-index: 2; border-bottom: 1px solid var(--glass-border); box-sizing: border-box;}
 #ea-full-portfolio .ea-about-split { display: flex; align-items: center; gap: 60px; width: 90%; max-width: 1250px; margin: 0 auto; }
-
 #ea-full-portfolio .ea-about-text-card { 
     flex: 1.2; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 40px; padding: 60px; 
     backdrop-filter: blur(20px); box-shadow: var(--shadow-strong), inset 0 0 20px rgba(var(--accent-rgb), 0.02); 
     position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 20px;
 }
 #ea-full-portfolio .ea-about-text-card::before { content: ''; position: absolute; top: 0; right: 0; width: 250px; height: 250px; background: rgba(var(--accent-rgb), 0.1); filter: blur(70px); border-radius: 50%; z-index: 0; pointer-events: none;}
-
 #ea-full-portfolio .ea-about-subtitle { display: inline-flex; align-items: center; gap: 10px; background: rgba(var(--accent-rgb), 0.1); padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(var(--accent-rgb), 0.2); color: rgb(var(--accent-rgb)); font-weight: 700; font-size: 1rem; width: max-content; position: relative; z-index: 2;}
-
 #ea-full-portfolio .ea-about-title { font-size: 3rem; font-weight: 900; color: rgb(var(--text-main-rgb)); line-height: 1.4; margin: 0; position: relative; z-index: 2; }
 #ea-full-portfolio .ea-about-title .ea-highlight-solid { color: rgb(var(--accent-rgb)); text-shadow: 0 0 30px rgba(var(--accent-rgb), 0.2); display: inline-block;}
-
 #ea-full-portfolio .ea-about-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.9; position: relative; z-index: 2; margin-bottom: 10px;}
-
 #ea-full-portfolio .ea-about-features { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 10px; position: relative; z-index: 2;}
 #ea-full-portfolio .ea-feature { display: flex; align-items: center; gap: 10px; color: rgb(var(--text-main-rgb)); font-weight: 600; font-size: 1.05rem; }
 #ea-full-portfolio .ea-feature i { color: rgb(var(--accent-rgb)); font-size: 1.2rem; }
-
 #ea-full-portfolio .ea-about-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 35px; border-top: 1px solid var(--glass-border); position: relative; z-index: 2;}
 #ea-full-portfolio .ea-about-stat { text-align: center; }
 #ea-full-portfolio .ea-counter-wrap { display: flex; justify-content: center; align-items: baseline; gap: 4px; margin-bottom: 5px; direction: ltr;}
 #ea-full-portfolio .ea-counter-wrap h4 { font-size: 3.5rem; font-weight: 900; color: rgb(var(--text-main-rgb)); margin: 0; line-height: 1; }
 #ea-full-portfolio .ea-counter-wrap span { font-size: 2.2rem; font-weight: 900; color: rgb(var(--accent-rgb)); line-height: 1;}
 #ea-full-portfolio .ea-about-stat p { font-size: 1.1rem; color: var(--text-muted); margin: 0; font-weight: 700; }
-
-/* --- الروبوت التفاعلي 3D --- */
 #ea-full-portfolio .ea-about-visual-side { flex: 0.8; perspective: 1200px; position: relative; display: flex; justify-content: center; align-items: center; min-height: 450px;}
 #ea-full-portfolio .ea-robot-wrapper { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; perspective: 1200px; position: relative; z-index: 5; background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.05) 0%, transparent 60%); }
 #ea-full-portfolio .ea-robot-hover-wrap { animation: ea-robot-float 6s ease-in-out infinite; }
 @keyframes ea-robot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
 #ea-full-portfolio .ea-robot-head {
     width: 240px; height: 180px;
     background: var(--robot-head-grad);
@@ -301,7 +236,6 @@
     box-shadow: var(--shadow-strong), inset 0 0 40px rgba(var(--accent-rgb), 0.1);
     transform-style: preserve-3d; transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 #ea-full-portfolio .ea-robot-face {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(40px);
     width: 170px; height: 80px; background: var(--robot-face-bg); border-radius: 40px;
@@ -309,25 +243,21 @@
     box-shadow: inset 0 0 25px rgba(var(--accent-rgb), 0.3), var(--shadow-base);
     border: 1px solid var(--glass-border); overflow: hidden;
 }
-
 #ea-full-portfolio .ea-eye {
     width: 45px; height: 50px; background: rgba(var(--accent-rgb), 0.05);
     border: 2px solid rgb(var(--accent-rgb)); border-radius: 50%; position: relative;
     box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.5), inset 0 0 15px rgba(var(--accent-rgb), 0.8);
     transform-origin: center; animation: ea-blink-eye 5s infinite; overflow: hidden;
 }
-
 #ea-full-portfolio .ea-pupil {
     width: 16px; height: 24px; background: #fff; border-radius: 50%;
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     box-shadow: 0 0 15px #fff; transition: transform 0.05s linear;
 }
-
 #ea-full-portfolio .ea-eye-lid {
     display: none;
 }
 @keyframes ea-blink-eye { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
-
 #ea-full-portfolio .ea-ear {
     position: absolute; top: 50%; transform: translateY(-50%) translateZ(10px);
     width: 15px; height: 60px; background: rgb(var(--accent-rgb)); 
@@ -335,7 +265,6 @@
 }
 #ea-full-portfolio .ea-ear.left { left: -8px; }
 #ea-full-portfolio .ea-ear.right { right: -8px; }
-
 #ea-full-portfolio .ea-antenna {
     position: absolute; top: -30px; left: 50%; transform: translateX(-50%) translateZ(10px);
     width: 6px; height: 30px; background: #888; border-radius: 3px;
@@ -346,16 +275,12 @@
     animation: ea-pulse-cyan 2s infinite alternate;
 }
 @keyframes ea-pulse-cyan { 0% { transform: scale(1); box-shadow: 0 0 10px rgb(var(--accent-rgb)); } 100% { transform: scale(1.3); box-shadow: 0 0 30px rgb(var(--accent-rgb)); } }
-
 #ea-full-portfolio .ea-robot-shadow {
     position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
     width: 140px; height: 15px; background: rgba(var(--accent-rgb), 0.15);
     border-radius: 50%; filter: blur(10px); animation: ea-shadow-pulse 6s ease-in-out infinite;
 }
 @keyframes ea-shadow-pulse { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; } 50% { transform: translateX(-50%) scale(0.7); opacity: 0.2; } }
-
-
-/* --- 2. قسم المهارات --- */
 #ea-full-portfolio .ea-skills { padding: 120px 0; position: relative; z-index: 2; border-bottom: 1px solid var(--glass-border); box-sizing: border-box;}
 #ea-full-portfolio .ea-skills-marquee-wrapper { width: 100%; overflow: hidden; display: flex; padding: 30px 0; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); direction: ltr !important; justify-content: flex-start !important; }
 #ea-full-portfolio .ea-skills-marquee-track { display: flex; gap: 30px; width: max-content; animation: ea-scroll-marquee-rtl 25s linear infinite; direction: ltr !important;}
@@ -366,8 +291,6 @@
 #ea-full-portfolio .ea-skill-item:hover { transform: translateY(-10px); border-color: rgba(var(--accent-rgb), 0.4); box-shadow: var(--shadow-hover), 0 0 20px rgba(var(--accent-rgb), 0.2); background: rgba(var(--accent-rgb), 0.05); }
 #ea-full-portfolio .ea-skill-icon { font-size: 3.5rem; margin-bottom: 20px; color: rgb(var(--accent-rgb)); }
 #ea-full-portfolio .ea-skill-name { font-size: 1.25rem; font-weight: 700; color: rgb(var(--text-main-rgb)); }
-
-/* --- 3. قسم الخدمات --- */
 #ea-full-portfolio .ea-services-section { padding: 150px 0; position: relative; z-index: 2; border-bottom: 1px solid var(--glass-border); box-sizing: border-box;}
 #ea-full-portfolio .ea-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 90%; max-width: 1250px; margin: 0 auto; }
 #ea-full-portfolio .ea-srv-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(20px); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -381,30 +304,23 @@
 #ea-full-portfolio .ea-srv-title { font-size: 1.8rem; color: rgb(var(--text-main-rgb)); font-weight: 800; margin-bottom: 20px; transition: 0.3s; }
 #ea-full-portfolio .ea-srv-card:hover .ea-srv-title { color: rgb(var(--accent-rgb)); }
 #ea-full-portfolio .ea-srv-desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
-
-/* --- قسم المشاريع --- */
 #ea-full-portfolio .ea-projects-section { padding: 150px 0 !important; position: relative !important; z-index: 2 !important; border-bottom: 1px solid var(--glass-border) !important; box-sizing: border-box;}
 #ea-full-portfolio .ea-filters { display: flex !important; justify-content: center !important; gap: 15px !important; margin-bottom: 70px !important; flex-wrap: wrap !important; }
 #ea-full-portfolio .ea-filter-btn { padding: 12px 30px !important; background: var(--glass-bg) !important; border: 1px solid var(--glass-border) !important; color: rgb(var(--text-main-rgb)) !important; border-radius: 50px !important; font-size: 1.15rem !important; font-weight: 700 !important; cursor: pointer !important; transition: all 0.3s ease !important; }
 #ea-full-portfolio .ea-filter-btn:hover, #ea-full-portfolio .ea-filter-btn.active { background: rgb(var(--accent-rgb)) !important; color: var(--btn-hover-text) !important; box-shadow: 0 5px 20px rgba(var(--accent-rgb), 0.3) !important; border-color: rgb(var(--accent-rgb)) !important; transform: translateY(-3px) !important; }
-/* --- IDE / Code Editor Projects Layout --- */
-#ea-full-portfolio .ea-ide-container { width: 95% !important; max-width: 1300px !important; margin: 0 auto !important; display: flex !important; background: #1e1e1e !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid #333 !important; box-shadow: 0 30px 60px rgba(0,0,0,0.5) !important; height: 600px !important; margin-top: 50px !important; direction: ltr !important; font-family: 'Consolas', 'Courier New', monospace !important; }
+#ea-full-portfolio .ea-ide-container { width: 95% !important; max-width: 1300px !important; margin: 0 auto !important; display: flex !important; background: #1e1e1e !important; border-radius: 12px !important; overflow: hidden !important; border: 1px solid #333 !important; box-shadow: 0 30px 60px rgba(0,0,0,0.5) !important; height: 750px !important; margin-top: 50px !important; direction: ltr !important; font-family: 'Consolas', 'Courier New', monospace !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-container { background: #fafafa !important; border-color: #ddd !important; box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important; }
-
-/* IDE Sidebar */
 #ea-full-portfolio .ea-ide-sidebar { width: 300px !important; background: #252526 !important; border-right: 1px solid #333 !important; display: flex !important; flex-direction: column !important; flex-shrink: 0 !important; overflow-y: auto !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-sidebar { background: #f3f3f3 !important; border-color: #ddd !important; }
 #ea-full-portfolio .ea-ide-sidebar::-webkit-scrollbar { width: 6px !important; }
 #ea-full-portfolio .ea-ide-sidebar::-webkit-scrollbar-thumb { background: #424242 !important; }
-
 #ea-full-portfolio .ea-ide-sidebar-header { padding: 15px 20px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; font-size: 0.85rem !important; color: #858585 !important; font-weight: 600 !important; letter-spacing: 1px !important; position: relative !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-sidebar-header { color: #555 !important; }
 #ea-full-portfolio .ea-mac-btns { display: flex !important; gap: 8px !important; position: absolute !important; right: 20px !important; top: 15px !important; z-index: 10 !important; direction: ltr !important; }
 #ea-full-portfolio .ea-mac-btns span { width: 12px !important; height: 12px !important; border-radius: 50% !important; display: inline-block !important; }
-#ea-full-portfolio .ea-mac-btns span:nth-child(1) { background-color: #27c93f !important; } /* Green */
-#ea-full-portfolio .ea-mac-btns span:nth-child(2) { background-color: #ffbd2e !important; } /* Yellow */
-#ea-full-portfolio .ea-mac-btns span:nth-child(3) { background-color: #ff5f56 !important; } /* Red */
-
+#ea-full-portfolio .ea-mac-btns span:nth-child(1) { background-color: #27c93f !important; } 
+#ea-full-portfolio .ea-mac-btns span:nth-child(2) { background-color: #ffbd2e !important; } 
+#ea-full-portfolio .ea-mac-btns span:nth-child(3) { background-color: #ff5f56 !important; } 
 #ea-full-portfolio .ea-ide-folder { display: flex !important; flex-direction: column !important; }
 #ea-full-portfolio .ea-ide-folder-name { padding: 8px 15px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-size: 0.95rem !important; color: #cccccc !important; cursor: pointer !important; user-select: none !important; transition: 0.2s !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-folder-name { color: #333 !important; }
@@ -412,72 +328,56 @@
 #ea-full-portfolio.ea-light-mode .ea-ide-folder-name:hover { background: #e8e8e8 !important; }
 #ea-full-portfolio .ea-ide-folder-name i.fa-chevron-right,
 #ea-full-portfolio .ea-ide-folder-name i.fa-chevron-down { font-size: 0.75rem !important; width: 15px !important; color: #858585 !important; }
-
 #ea-full-portfolio .ea-ide-folder-content { display: flex !important; flex-direction: column !important; overflow: hidden !important; transition: max-height 0.3s ease !important; }
 #ea-full-portfolio .ea-ide-folder.collapsed .ea-ide-folder-content { display: none !important; }
-
 #ea-full-portfolio .ea-ide-file { padding: 6px 15px 6px 40px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-size: 0.9rem !important; color: #cccccc !important; cursor: pointer !important; transition: 0.2s !important; position: relative !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-file { color: #333 !important; }
 #ea-full-portfolio .ea-ide-file:hover { background: #2a2d2e !important; color: #fff !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-file:hover { background: #e8e8e8 !important; color: #000 !important; }
 #ea-full-portfolio .ea-ide-file.active { background: #37373d !important; color: #fff !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-file.active { background: #e4e6f1 !important; color: #000 !important; }
-
-/* IDE Workspace */
 #ea-full-portfolio .ea-ide-workspace { flex: 1 !important; display: flex !important; flex-direction: column !important; background: #1e1e1e !important; min-width: 0 !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-workspace { background: #ffffff !important; }
-
 #ea-full-portfolio .ea-ide-tabs { display: flex !important; background: #2d2d2d !important; overflow-x: auto !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-tabs { background: #ececec !important; }
 #ea-full-portfolio .ea-ide-tabs::-webkit-scrollbar { height: 2px !important; }
-
 #ea-full-portfolio .ea-ide-tab { padding: 10px 20px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-size: 0.9rem !important; color: #858585 !important; background: #2d2d2d !important; cursor: pointer !important; border-right: 1px solid #1e1e1e !important; min-width: 150px !important; border-top: 1px solid transparent !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-tab { background: #ececec !important; color: #666 !important; border-right-color: #ddd !important; }
 #ea-full-portfolio .ea-ide-tab.active { background: #1e1e1e !important; color: #fff !important; border-top-color: rgb(var(--accent-rgb)) !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-tab.active { background: #ffffff !important; color: #000 !important; }
-
 #ea-full-portfolio .ea-ide-content { flex: 1 !important; display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 20px !important; overflow-y: auto !important; position: relative !important; }
 #ea-full-portfolio .ea-ide-content::-webkit-scrollbar { width: 6px !important; }
 #ea-full-portfolio .ea-ide-content::-webkit-scrollbar-thumb { background: #424242 !important; border-radius: 3px !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-content::-webkit-scrollbar-thumb { background: #ccc !important; }
-
-#ea-full-portfolio .ea-ide-preview { width: 100% !important; height: 350px !important; border-radius: 8px !important; background-size: cover !important; background-position: top center !important; background-repeat: no-repeat !important; border: 1px solid #333 !important; position: relative !important; box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; flex-shrink: 0 !important; transition: background-image 0.4s ease, background-position 4s ease-in-out !important; cursor: ns-resize !important; }
+#ea-full-portfolio .ea-ide-preview { width: 100% !important; height: 500px !important; border-radius: 8px !important; background-size: 100% auto !important; background-position: top center !important; background-repeat: no-repeat !important; border: 1px solid #333 !important; position: relative !important; box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important; flex-shrink: 0 !important; transition: background-image 0.4s ease, background-position 4s ease-in-out !important; cursor: ns-resize !important; }
 #ea-full-portfolio .ea-ide-preview:hover { background-position: bottom center !important; }
 #ea-full-portfolio .ea-ide-preview:hover .ea-scroll-hint { opacity: 0 !important; visibility: hidden !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-preview { border-color: #ddd !important; box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; }
-
 #ea-full-portfolio .ea-scroll-hint { position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 6px !important; color: #fff !important; font-size: 1.3rem !important; pointer-events: none !important; transition: 0.3s !important; animation: eaBounce 2s infinite ease-in-out !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; }
 #ea-full-portfolio .ea-custom-mouse { width: 22px !important; height: 36px !important; border: 2px solid #fff !important; border-radius: 12px !important; display: flex !important; justify-content: center !important; position: relative !important; box-shadow: 0 2px 10px rgba(0,0,0,0.5), inset 0 2px 10px rgba(0,0,0,0.5) !important; }
 #ea-full-portfolio .ea-custom-mouse::before { content: '' !important; width: 2px !important; height: 6px !important; background: #fff !important; margin-top: 6px !important; border-radius: 2px !important; animation: eaScrollWheel 1.5s infinite !important; }
 @keyframes eaScrollWheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
 @keyframes eaBounce { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, -45%); } }
-
 #ea-full-portfolio .ea-ide-link-btn { position: absolute !important; bottom: 25px !important; right: 25px !important; background: rgba(20, 20, 20, 0.75) !important; color: #fff !important; padding: 12px 24px !important; border-radius: 30px !important; font-family: var(--font-cairo) !important; text-decoration: none !important; display: flex !important; align-items: center !important; gap: 10px !important; font-weight: 600 !important; font-size: 0.95rem !important; backdrop-filter: blur(10px) !important; transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; overflow: hidden !important; }
 #ea-full-portfolio .ea-ide-link-btn:hover { background: #fff !important; color: #000 !important; transform: translateY(-4px) !important; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important; border-color: #fff !important; }
 #ea-full-portfolio .ea-ide-link-btn i { transition: transform 0.4s !important; }
 #ea-full-portfolio .ea-ide-link-btn:hover i { transform: translate(2px, -2px) !important; }
-
 #ea-full-portfolio .ea-ide-json-block { display: flex !important; background: transparent !important; font-size: 1rem !important; line-height: 1.6 !important; }
 #ea-full-portfolio .ea-ide-line-numbers { display: flex !important; flex-direction: column !important; color: #858585 !important; padding-right: 20px !important; text-align: right !important; user-select: none !important; border-right: 1px solid #333 !important; margin-right: 20px !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-line-numbers { color: #a0a0a0 !important; border-right-color: #eee !important; }
-
 #ea-full-portfolio .ea-ide-json-block pre { margin: 0 !important; padding: 0 !important; white-space: pre-wrap !important; color: #d4d4d4 !important; flex: 1 !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-json-block pre { color: #333 !important; }
-
 #ea-full-portfolio .ea-json-key { color: #9cdcfe !important; }
 #ea-full-portfolio.ea-light-mode .ea-json-key { color: #0451a5 !important; }
 #ea-full-portfolio .ea-json-string { color: #ce9178 !important; }
 #ea-full-portfolio.ea-light-mode .ea-json-string { color: #a31515 !important; }
 #ea-full-portfolio .ea-json-boolean { color: #569cd6 !important; }
 #ea-full-portfolio.ea-light-mode .ea-json-boolean { color: #0000ff !important; }
-
 @media (max-width: 992px) {
     #ea-full-portfolio .ea-ide-container { flex-direction: column !important; height: auto !important; min-height: 800px !important; }
     #ea-full-portfolio .ea-ide-sidebar { width: 100% !important; border-right: none !important; border-bottom: 1px solid #333 !important; max-height: 300px !important; }
     #ea-full-portfolio .ea-ide-preview { height: 250px !important; }
 }
-
-/* --- 4. قسم "لماذا تختارني؟" --- */
 #ea-full-portfolio .ea-why-me-section { padding: 120px 0; position: relative; z-index: 2; border-bottom: 1px solid var(--glass-border); box-sizing: border-box;}
 #ea-full-portfolio .ea-why-grid { width: 90%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 #ea-full-portfolio .ea-value-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 40px; text-align: center; position: relative; transition: 0.4s; }
@@ -485,8 +385,6 @@
 #ea-full-portfolio .ea-value-icon { font-size: 3rem; color: rgb(var(--accent-rgb)); margin-bottom: 25px; display: inline-block; filter: drop-shadow(0 0 10px rgba(var(--accent-rgb), 0.3)); }
 #ea-full-portfolio .ea-value-card h3 { color: rgb(var(--text-main-rgb)); font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; }
 #ea-full-portfolio .ea-value-card p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
-
-/* --- 5. قسم نموذج التواصل --- */
 #ea-full-portfolio .ea-contact-section { padding: 150px 0 50px; position: relative; z-index: 2; box-sizing: border-box;}
 #ea-full-portfolio .ea-contact-container { width: 90%; max-width: 800px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 30px; padding: 60px; backdrop-filter: blur(20px); box-shadow: var(--shadow-strong); text-align: center; }
 #ea-full-portfolio .ea-contact-container h3 { font-size: 2.5rem; color: rgb(var(--text-main-rgb)); font-weight: 900; margin-bottom: 15px; }
@@ -499,8 +397,6 @@
 #ea-full-portfolio .ea-form-input::placeholder { color: var(--text-muted); font-weight: 500; }
 #ea-full-portfolio .ea-form-btn { width: 100%; padding: 20px; background: rgb(var(--accent-rgb)); color: var(--btn-hover-text); border: none; border-radius: 12px; font-size: 1.25rem; font-weight: 800; font-family: 'Outfit', 'Tajawal', sans-serif; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 15px; direction: ltr;}
 #ea-full-portfolio .ea-form-btn:hover { background: var(--btn-primary-bg); color: var(--btn-primary-color); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.3); }
-
-/* --- الفوتر الاحترافي --- */
 #ea-full-portfolio .ea-footer-premium { background: var(--nav-bg) !important; backdrop-filter: blur(20px); padding: 80px 8% 80px !important; position: relative !important; z-index: 10 !important; border-top: 1px solid var(--glass-border) !important; box-sizing: border-box;}
 #ea-full-portfolio .ea-footer-top { text-align: center !important; margin-bottom: 80px !important; padding-bottom: 80px !important; border-bottom: 1px solid var(--glass-border) !important; }
 #ea-full-portfolio .ea-footer-heading { font-size: 4.5rem !important; font-weight: 900 !important; color: rgb(var(--text-main-rgb)) !important; line-height: 1.3 !important; margin-bottom: 40px !important; letter-spacing: 0px !important; }
@@ -530,16 +426,11 @@
 #ea-full-portfolio .ea-social-icons { display: flex !important; gap: 15px !important; flex-wrap: wrap !important; }
 #ea-full-portfolio .ea-social-icons a { width: 50px !important; height: 50px !important; border-radius: 50% !important; background: var(--glass-bg) !important; border: 1px solid var(--glass-border) !important; display: flex !important; justify-content: center !important; align-items: center !important; color: rgb(var(--text-main-rgb)) !important; font-size: 1.2rem !important; text-decoration: none !important; transition: 0.4s !important; }
 #ea-full-portfolio .ea-social-icons a:hover { background: rgb(var(--accent-rgb)) !important; color: var(--btn-hover-text) !important; transform: translateY(-5px) !important; box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.3) !important; border-color: transparent !important; }
-
-/* --- تحسين مقاسات الخطوط خصيصاً للغة الإنجليزية (LTR) --- */
 #ea-full-portfolio[dir="ltr"] .ea-hero-heading { font-size: 3.6rem !important; letter-spacing: -1px !important; line-height: 1.15 !important; }
 #ea-full-portfolio[dir="ltr"] .ea-section-header h2 { font-size: 3.2rem !important; letter-spacing: -1px !important; }
 #ea-full-portfolio[dir="ltr"] .ea-about-title { font-size: 2.5rem !important; letter-spacing: -1px !important;}
 #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 3.6rem !important; letter-spacing: 0px !important; }
-
-/* --- الموبايل والشاشات (Responsive) --- */
 #ea-full-portfolio .ea-swipe-btn { display: none !important; }
-
 @media (max-width: 1200px) { 
     #ea-full-portfolio .ea-projects-grid { grid-template-columns: repeat(2, 1fr) !important; } 
     #ea-full-portfolio .ea-why-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -557,27 +448,23 @@
     #ea-full-portfolio.ea-light-mode .ea-ide-file { background: transparent !important; }
     #ea-full-portfolio .ea-ide-file:hover, #ea-full-portfolio .ea-ide-file.active { background: #37373d !important; color: #fff !important; }
     #ea-full-portfolio.ea-light-mode .ea-ide-file:hover, #ea-full-portfolio.ea-light-mode .ea-ide-file.active { background: #e4e6f1 !important; color: #000 !important; }
-    
     #ea-full-portfolio .ea-ide-workspace { flex: none !important; height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column !important;}
     #ea-full-portfolio .ea-ide-content { flex: none !important; min-height: 0 !important; padding: 15px !important;}
-    #ea-full-portfolio .ea-ide-preview { height: 350px !important; flex-shrink: 0 !important; }
-    #ea-full-portfolio .ea-ide-json-block { display: none !important; } /* Hide JSON to make it cleaner on mobile */
+    #ea-full-portfolio .ea-ide-preview { height: 450px !important; flex-shrink: 0 !important; }
+    #ea-full-portfolio .ea-ide-json-block { display: none !important; } 
     #ea-full-portfolio .ea-header { padding: 15px 5%; }
     #ea-full-portfolio .ea-nav-links { display: none; }
-    
     .ea-hero-bounds { flex-direction: column !important; text-align: center !important; gap: 40px !important; padding-top: 20px !important;}
     .ea-hero-text-content { align-items: center !important; text-align: center !important; }
     .ea-hero-buttons { justify-content: center !important; }
     .ea-hero-heading { font-size: 3.2rem !important; }
     #ea-full-portfolio[dir="ltr"] .ea-hero-heading { font-size: 2.8rem !important; }
-    
     #ea-full-portfolio .ea-about-split { flex-direction: column-reverse; text-align: center; gap: 40px;}
     #ea-full-portfolio .ea-about-text-card { padding: 40px 30px; }
     #ea-full-portfolio .ea-about-stats-grid { grid-template-columns: 1fr; gap: 20px; }
     #ea-full-portfolio .ea-about-desc { margin: 0 auto 20px; text-align: center; }
     #ea-full-portfolio .ea-about-features { justify-content: center; }
     #ea-full-portfolio .ea-about-visual-side { min-height: 350px; }
-    
     #ea-full-portfolio .ea-services-grid { grid-template-columns: repeat(2, 1fr) !important; }
     #ea-full-portfolio .ea-contact-container { padding: 40px 30px; }
     #ea-full-portfolio .ea-footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center !important; }
@@ -589,7 +476,7 @@
 @media (max-width: 768px) {
     #ea-full-portfolio .ea-ide-container { min-height: 0 !important; height: auto !important; }
     #ea-full-portfolio .ea-ide-sidebar { max-height: 200px !important; }
-    #ea-full-portfolio .ea-ide-preview { height: 250px !important; }
+    #ea-full-portfolio .ea-ide-preview { height: 350px !important; }
     #ea-full-portfolio .ea-ide-content { padding: 10px !important; gap: 10px !important; }
     #ea-full-portfolio .ea-ide-json-block { display: none !important; }
     #ea-full-portfolio .ea-header { padding: 15px 20px !important; }
@@ -597,43 +484,30 @@
     #ea-full-portfolio .ea-header-actions { gap: 10px !important; }
     #ea-full-portfolio .ea-action-btn { width: 35px !important; height: 35px !important; font-size: 0.9rem !important; }
     #ea-full-portfolio .ea-header-btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
-    
     .ea-hero-section { padding: 80px 0 30px !important; }
     #ea-full-portfolio .ea-hero-heading { font-size: 2rem !important; }
     #ea-full-portfolio[dir="ltr"] .ea-hero-heading { font-size: 1.8rem !important; }
     #ea-full-portfolio .ea-hero-roles { font-size: 1.1rem !important; height: auto !important; min-height: 55px !important; }
     #ea-full-portfolio .ea-hero-desc { font-size: 0.95rem !important; }
-    
-    /* Fix Hero Buttons */
     #ea-full-portfolio .ea-hero-buttons { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; width: 100% !important; gap: 10px !important;}
     #ea-full-portfolio .ea-btn-primary, #ea-full-portfolio .ea-btn-secondary { width: auto !important; padding: 10px 20px !important; font-size: 0.95rem !important; flex: 1 1 auto; max-width: max-content; }
-    
-    /* Fix Code Window Width/Height */
     #ea-full-portfolio .ea-hero-visual-content { width: 100% !important; }
     #ea-full-portfolio .ea-code-window { width: 100% !important; max-width: 100% !important; margin-top: 20px !important; }
     #ea-full-portfolio .ea-code-body { padding: 15px !important; font-size: 0.85rem !important; min-height: 250px !important;}
-    
-    /* Global Section Headers */
     #ea-full-portfolio .ea-section-header { margin-bottom: 30px !important; }
     #ea-full-portfolio .ea-section-header h2 { font-size: 1.8rem !important; }
     #ea-full-portfolio[dir="ltr"] .ea-section-header h2 { font-size: 1.6rem !important; }
     #ea-full-portfolio .ea-section-header p { font-size: 1.1rem !important; margin-bottom: 10px !important;}
-    
-    /* Skills Section */
     #ea-full-portfolio .ea-skill-item { min-width: 130px !important; padding: 20px 10px !important; border-radius: 15px !important;}
     #ea-full-portfolio .ea-skill-icon { font-size: 2.5rem !important; margin-bottom: 10px !important;}
     #ea-full-portfolio .ea-skill-name { font-size: 1rem !important; }
-    
     #ea-full-portfolio .ea-about-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-about-text-card { padding: 20px 15px; }
     #ea-full-portfolio .ea-about-title { font-size: 1.6rem !important; }
     #ea-full-portfolio[dir="ltr"] .ea-about-title { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-counter-wrap h4 { font-size: 1.8rem !important; }
     #ea-full-portfolio .ea-counter-wrap span { font-size: 1.2rem !important; }
-    /* Fix Robot Head Size */
     #ea-full-portfolio .ea-robot-head { transform: none !important; width: 180px !important; height: 135px !important; margin-bottom: 15px !important; }
-    
-    /* Services / How can I help you (Horizontal Slider) */
     #ea-full-portfolio .ea-services-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-services-grid { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 15px !important; padding-bottom: 20px !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     #ea-full-portfolio .ea-services-grid::-webkit-scrollbar { display: none; }
@@ -641,20 +515,14 @@
     #ea-full-portfolio .ea-srv-icon-wrapper { width: 60px !important; height: 60px !important; font-size: 1.8rem !important; margin-bottom: 15px !important; }
     #ea-full-portfolio .ea-srv-title { font-size: 1.3rem !important; margin-bottom: 10px !important; }
     #ea-full-portfolio .ea-srv-desc { font-size: 0.95rem !important; line-height: 1.6 !important; }
-    
-    /* Projects Section (Horizontal Slider) */
     #ea-full-portfolio .ea-projects-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-projects-grid { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 15px !important; padding-bottom: 20px !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     #ea-full-portfolio .ea-projects-grid::-webkit-scrollbar { display: none; }
     #ea-full-portfolio .ea-grid-card { flex: 0 0 85% !important; padding: 15px !important; gap: 15px !important; }
     #ea-full-portfolio .ea-grid-mockup { height: 200px !important; }
-    
-    /* Fix Filters Slider (Prevent cut-off at top) */
     #ea-full-portfolio .ea-filters { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 10px !important; margin-bottom: 20px !important; padding: 5px 0 15px 0 !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     #ea-full-portfolio .ea-filters::-webkit-scrollbar { display: none; }
     #ea-full-portfolio .ea-filter-btn { font-size: 0.9rem !important; padding: 8px 18px !important; flex: 0 0 auto !important; white-space: nowrap !important; text-align: center !important;}
-    
-    /* Why choose me (Horizontal Slider) */
     #ea-full-portfolio .ea-why-me-section { padding: 50px 0 !important; }
     #ea-full-portfolio .ea-why-grid { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; gap: 15px !important; padding-bottom: 20px !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     #ea-full-portfolio .ea-why-grid::-webkit-scrollbar { display: none; }
@@ -662,27 +530,20 @@
     #ea-full-portfolio .ea-value-icon { font-size: 2.2rem !important; margin-bottom: 15px !important; }
     #ea-full-portfolio .ea-value-card h3 { font-size: 1.2rem !important; margin-bottom: 10px !important; }
     #ea-full-portfolio .ea-value-card p { font-size: 0.95rem !important; line-height: 1.6 !important;}
-    
-    /* Contact */
     #ea-full-portfolio .ea-contact-section { padding: 50px 0 30px !important; }
     #ea-full-portfolio .ea-contact-container { padding: 25px 15px !important; }
     #ea-full-portfolio .ea-form-grid { grid-template-columns: 1fr !important; }
     #ea-full-portfolio .ea-contact-container h3 { font-size: 1.5rem !important; margin-bottom: 15px !important;}
     #ea-full-portfolio .ea-form-btn { font-size: 1rem !important; padding: 12px 20px !important; }
-    
-    /* Footer Fixes */
     #ea-full-portfolio .ea-footer-premium { padding: 40px 15px 30px !important; }
     #ea-full-portfolio .ea-footer-top { margin-bottom: 25px !important; padding-bottom: 25px !important; }
     #ea-full-portfolio .ea-footer-heading { font-size: 1.6rem !important; margin-bottom: 20px !important; line-height: 1.3 !important;}
     #ea-full-portfolio[dir="ltr"] .ea-footer-heading { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-footer-cta-btn { font-size: 0.95rem !important; padding: 12px 15px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; justify-content: center !important;}
-    
-    /* Swipe Indicator for Mobile Sliders */
     #ea-full-portfolio .ea-services-section,
     #ea-full-portfolio .ea-why-me-section {
         position: relative !important;
     }
-    
     #ea-full-portfolio .ea-swipe-btn {
         display: flex !important;
         position: absolute !important;
@@ -713,7 +574,6 @@
         background: rgb(var(--accent-rgb)) !important;
         color: #000 !important;
     }
-    
     #ea-full-portfolio[dir="rtl"] .ea-swipe-btn {
         right: auto !important;
         left: 15px !important;
@@ -722,15 +582,10 @@
     #ea-full-portfolio[dir="rtl"] .ea-swipe-btn i {
         transform: scaleX(-1) !important;
     }
-    
-
-    
-    /* --- Dynamic Mobile Animations & Feedback --- */
     #ea-full-portfolio .ea-robot-head,
     #ea-full-portfolio .ea-skill-icon {
         animation: floatMobile 3s ease-in-out infinite;
     }
-    
     #ea-full-portfolio .ea-grid-card:active,
     #ea-full-portfolio .ea-srv-card:active,
     #ea-full-portfolio .ea-value-card:active {
@@ -739,35 +594,29 @@
         box-shadow: inset 0 0 20px rgba(var(--accent-rgb), 0.1) !important;
         transition: transform 0.1s, border-color 0.1s, box-shadow 0.1s !important;
     }
-    
     #ea-full-portfolio .ea-btn-primary,
     #ea-full-portfolio .ea-footer-cta-btn {
         animation: pulseMobileCTA 2.5s infinite alternate;
     }
 }
-
 @keyframes floatMobile {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
-
 @keyframes pulseMobileCTA {
     0% { box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2), inset 0 0 5px rgba(var(--accent-rgb), 0.1); }
     100% { box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.5), inset 0 0 10px rgba(var(--accent-rgb), 0.3); }
 }
-
 @keyframes pulseSwipeLTR {
     0% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
     50% { opacity: 1; transform: translateY(-50%) translateX(10px); }
     100% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
 }
-
 @keyframes pulseSwipeRTL {
     0% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
     50% { opacity: 1; transform: translateY(-50%) translateX(-10px); }
     100% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
 }
-
 @media (max-width: 480px) {
     #ea-full-portfolio .ea-logo { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-header-btn { display: none !important; } 
