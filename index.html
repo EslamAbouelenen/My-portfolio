@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@
                     <div class="ea-code-line ea-indent-2" style="--chars: 20; --delay: 3.5s; --dur: 1.0s"><span class="ea-variable" id="ea-preloader-status">Loading assets...</span> <span class="ea-number"><span id="ea-preloader-count-pro">0</span>%</span></div>
                     <div class="ea-code-line ea-indent" style="--chars: 9; --delay: 4.6s; --dur: 0.4s"><span class="ea-keyword">&lt;/script&gt;</span></div>
                     <div class="ea-code-line" style="--chars: 7; --delay: 5.1s; --dur: 0.4s"><span class="ea-keyword">&lt;/html&gt;</span></div>
-                    <div class="ea-code-progress-bar">
+                    <div class="ea-code-progress-bar" style="opacity: 0; animation: ea-fade-in 0.5s forwards 4.5s;">
                         <div class="ea-code-progress-fill" id="ea-progress-bar-pro"></div>
                     </div>
                 </div>
@@ -217,14 +217,47 @@
                         <span data-lang-en="EXPLORER" data-lang-ar="المستعرض" class="ea-explorer-text">EXPLORER</span>
                         <i class="fa-solid fa-ellipsis"></i>
                     </div>
-                    <div class="ea-ide-folder">
+<div class="ea-ide-folder">
                         <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
                             <i class="fa-solid fa-chevron-down ea-chevron"></i>
+                            <i class="fa-solid fa-folder" style="color: #A371F7;"></i>
+                            <span data-lang-en="E_Commerce" data-lang-ar="متاجر_إلكترونية">E_Commerce</span>
+                        </div>
+                        <div class="ea-ide-folder-content">
+                            <div class="ea-ide-file active" data-id="bandool" data-img="images/screencapture-bandool-2026-09-26-17_30_01.webp" data-url="https://bandool.com/" data-tech="WooCommerce, Payment Gateway" data-title-en="Bandool Store" data-title-ar="متجر بندول" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bandool.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bandool.php
+                            </div>
+                            <div class="ea-ide-file" data-id="asimat" data-img="images/screencapture-asimat-elmajd-2026-08-04-11_34_21.webp" data-url="https://asimat-elmajd.com/" data-tech="WooCommerce, Multi-vendor" data-title-en="Asimat Elmajd" data-title-ar="عاصمة المجد" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="asimat.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> asimat.php
+                            </div>
+                            <div class="ea-ide-file" data-id="bariq" data-img="images/screencapture-bariq-alajhza-2026-08-04-11_34_46.webp" data-url="https://bariq-alajhza.com/" data-tech="WooCommerce, Speed Optimization" data-title-en="Bariq Alajhza" data-title-ar="بريق الأجهزة" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bariq.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bariq.php
+                            </div>
+                            <div class="ea-ide-file" data-id="highend" data-img="images/screencapture-high-endsolutions-2026-09-26-17_29_29.webp" data-url="https://high-endsolutions.com/" data-tech="WooCommerce, B2B" data-title-en="High-End Solutions" data-title-ar="High-End Solutions" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="highend.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> highend.php
+                            </div>
+                            <div class="ea-ide-file" data-id="sreen" data-img="images/fullpage_snapshot_sreen_net_2026-09-26-14-40-16.webp" data-url="https://sreen.net/" data-tech="WooCommerce, Elementor" data-title-en="Sreen Store" data-title-ar="متجر سرين" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="sreen.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> sreen.php
+                            </div>
+                            <div class="ea-ide-file" data-id="medicalsleep" data-img="images/screencapture-medicalsleep-sa-2026-09-26-17_27_28.webp" data-url="https://medicalsleep.com.sa/" data-tech="WooCommerce, Elementor" data-title-en="Medical Sleep" data-title-ar="ميديكال سليب" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="medicalsleep.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> medicalsleep.php
+                            </div>
+                                                        <div class="ea-ide-file" data-id="builttin" data-img="images/screencapture-builtt-in-2026-08-04-11_39_03.webp" data-url="https://builtt-in.com/" data-tech="WooCommerce, Elementor" data-title-en="Built-in Store" data-title-ar="متجر بيلت إن" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="builtt-in.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> builtt-in.php
+                            </div>
+                            <div class="ea-ide-file" data-id="builtin" data-img="images/screencapture-built-in1-2026-08-04-11_37_05.webp" data-url="https://built-in1.com/" data-tech="WooCommerce, Minimal Design" data-title-en="Built-in 1" data-title-ar="Built-in 1" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="builtin.php">
+                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> builtin.php
+                            </div>
+                        </div>
+                    </div>
+<div class="ea-ide-folder collapsed">
+                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
+                            <i class="fa-solid fa-chevron-right ea-chevron"></i>
                             <i class="fa-solid fa-folder" style="color: #FFBD2E;"></i>
                             <span data-lang-en="Law_Firms" data-lang-ar="مكاتب_محاماة">Law_Firms</span>
                         </div>
                         <div class="ea-ide-folder-content">
-                            <div class="ea-ide-file active" data-id="fahd" data-img="images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp" data-url="https://fahdlawyer.com/" data-tech="WordPress, Elementor, PHP" data-title-en="Fahd Law Firm" data-title-ar="مكتب فهد للمحاماة" data-cat-en="Law Firm" data-cat-ar="مكتب محاماة" data-icon="fa-brands fa-js" data-color="#FFDF00" data-filename="fahd_lawyer.js">
+                            <div class="ea-ide-file" data-id="fahd" data-img="images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp" data-url="https://fahdlawyer.com/" data-tech="WordPress, Elementor, PHP" data-title-en="Fahd Law Firm" data-title-ar="مكتب فهد للمحاماة" data-cat-en="Law Firm" data-cat-ar="مكتب محاماة" data-icon="fa-brands fa-js" data-color="#FFDF00" data-filename="fahd_lawyer.js">
                                 <i class="fa-brands fa-js" style="color: #FFDF00;"></i> fahd_lawyer.js
                             </div>
                             <div class="ea-ide-file" data-id="amjd" data-img="images/screencapture-amjd-law-2026-08-04-11_28_48.webp" data-url="https://amjd.law/" data-tech="WordPress, Custom Theme" data-title-en="Amjd Law Firm" data-title-ar="مكتب أمجد للمحاماة" data-cat-en="Law Firm" data-cat-ar="مكتب محاماة" data-icon="fa-brands fa-js" data-color="#FFDF00" data-filename="amjd_law.js">
@@ -235,22 +268,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ea-ide-folder">
-                        <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
-                            <i class="fa-solid fa-chevron-down ea-chevron"></i>
-                            <i class="fa-solid fa-folder" style="color: #27C93F;"></i>
-                            <span data-lang-en="Corporate" data-lang-ar="شركات">Corporate</span>
-                        </div>
-                        <div class="ea-ide-folder-content">
-                            <div class="ea-ide-file" data-id="khattwa" data-img="images/screencapture-khattwa-2026-08-04-11_29_30.webp" data-url="https://khattwa.com/" data-tech="HTML5, CSS3, JS, PHP" data-title-en="Khattwa Co." data-title-ar="شركة خطوة" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-html5" data-color="#E34F26" data-filename="khattwa.html">
-                                <i class="fa-brands fa-html5" style="color: #E34F26;"></i> khattwa.html
-                            </div>
-                            <div class="ea-ide-file" data-id="keesksa" data-img="images/screencapture-keesksa-2026-08-04-11_30_09.webp" data-url="https://www.keesksa.com/" data-tech="WordPress, Elementor Pro" data-title-en="Kees KSA" data-title-ar="شركة كيس السعودية" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-css3-alt" data-color="#1572B6" data-filename="keesksa.css">
-                                <i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i> keesksa.css
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ea-ide-folder collapsed">
+<div class="ea-ide-folder collapsed">
                         <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
                             <i class="fa-solid fa-chevron-right ea-chevron"></i>
                             <i class="fa-solid fa-folder" style="color: #FF5F56;"></i>
@@ -265,48 +283,46 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ea-ide-folder collapsed">
+<div class="ea-ide-folder collapsed">
                         <div class="ea-ide-folder-name active" onclick="this.parentElement.classList.toggle('collapsed'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-down'); this.querySelector('.ea-chevron').classList.toggle('fa-chevron-right');">
                             <i class="fa-solid fa-chevron-right ea-chevron"></i>
-                            <i class="fa-solid fa-folder" style="color: #A371F7;"></i>
-                            <span data-lang-en="E_Commerce" data-lang-ar="متاجر_إلكترونية">E_Commerce</span>
+                            <i class="fa-solid fa-folder" style="color: #27C93F;"></i>
+                            <span data-lang-en="Corporate" data-lang-ar="شركات">Corporate</span>
                         </div>
                         <div class="ea-ide-folder-content">
-                            <div class="ea-ide-file" data-id="bandool" data-img="images/screencapture-bandool-2026-08-04-11_33_16.webp" data-url="https://bandool.com/" data-tech="WooCommerce, Payment Gateway" data-title-en="Bandool Store" data-title-ar="متجر بندول" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bandool.php">
-                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bandool.php
+                            <div class="ea-ide-file" data-id="khattwa" data-img="images/screencapture-khattwa-2026-08-04-11_29_30.webp" data-url="https://khattwa.com/" data-tech="HTML5, CSS3, JS, PHP" data-title-en="Khattwa Co." data-title-ar="شركة خطوة" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-html5" data-color="#E34F26" data-filename="khattwa.html">
+                                <i class="fa-brands fa-html5" style="color: #E34F26;"></i> khattwa.html
                             </div>
-                            <div class="ea-ide-file" data-id="asimat" data-img="images/screencapture-asimat-elmajd-2026-08-04-11_34_21.webp" data-url="https://asimat-elmajd.com/" data-tech="WooCommerce, Multi-vendor" data-title-en="Asimat Elmajd" data-title-ar="عاصمة المجد" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="asimat.php">
-                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> asimat.php
+                            <div class="ea-ide-file" data-id="thecodetime" data-img="images/screencapture-thecodetime-2026-09-26-17_36_02.webp" data-url="https://thecodetime.com/" data-tech="HTML5, CSS3, JS" data-title-en="The Code Time" data-title-ar="ذا كود تايم" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-html5" data-color="#E34F26" data-filename="thecodetime.html">
+                                <i class="fa-brands fa-html5" style="color: #E34F26;"></i> thecodetime.html
                             </div>
-                            <div class="ea-ide-file" data-id="bariq" data-img="images/screencapture-bariq-alajhza-2026-08-04-11_34_46.webp" data-url="https://bariq-alajhza.com/" data-tech="WooCommerce, Speed Optimization" data-title-en="Bariq Alajhza" data-title-ar="بريق الأجهزة" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="bariq.php">
-                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> bariq.php
-                            </div>
-                            <div class="ea-ide-file" data-id="highend" data-img="images/screencapture-high-endsolutions-2026-08-04-11_35_42.webp" data-url="https://high-endsolutions.com/" data-tech="WooCommerce, B2B" data-title-en="High-End Solutions" data-title-ar="High-End Solutions" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="highend.php">
-                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> highend.php
-                            </div>
-                            <div class="ea-ide-file" data-id="builtin" data-img="images/screencapture-built-in1-2026-08-04-11_37_05.webp" data-url="https://built-in1.com/" data-tech="WooCommerce, Minimal Design" data-title-en="Built-in 1" data-title-ar="Built-in 1" data-cat-en="E-Commerce" data-cat-ar="متجر إلكتروني" data-icon="fa-brands fa-php" data-color="#777BB4" data-filename="builtin.php">
-                                <i class="fa-brands fa-php" style="color: #777BB4;"></i> builtin.php
+                            <div class="ea-ide-file" data-id="amalaunited" data-img="images/screencapture-amalaunited-2026-09-26-17_25_00.webp" data-url="https://amalaunited.com/" data-tech="HTML5, CSS3, JS" data-title-en="Amala United" data-title-ar="أمالا المتحدة" data-cat-en="Corporate" data-cat-ar="موقع شركة" data-icon="fa-brands fa-html5" data-color="#E34F26" data-filename="amala.html">
+                                <i class="fa-brands fa-html5" style="color: #E34F26;"></i> amala.html
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
                 </div>
                 <div class="ea-ide-workspace" style="position: relative;">
                     <div class="ea-ide-tabs" id="ea-ide-tabs">
                         <div class="ea-ide-tab active" id="ea-ide-active-tab">
-                            <i class="fa-brands fa-js" style="color: #FFDF00;"></i> <span>fahd_lawyer.js</span>
+                            <i class="fa-brands fa-js" style="color: #777BB4;"></i> <span>bandool.php</span>
                         </div>
                     </div>
                     <div class="ea-mac-btns">
                         <span></span><span></span><span></span>
                     </div>
                     <div class="ea-ide-content">
-                        <div class="ea-ide-preview" id="ea-ide-preview" style="background-image: url('images/screencapture-fahdlawyer-2026-08-04-11_27_39.webp');">
+                        <div class="ea-ide-preview" id="ea-ide-preview" style="background-image: url('images/screencapture-bandool-2026-09-26-17_30_01.webp');">
                             <div class="ea-scroll-hint">
                                 <i class="fa-solid fa-chevron-up"></i>
                                 <div class="ea-custom-mouse"></div>
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
-                            <a href="https://fahdlawyer.com/" target="_blank" class="ea-ide-link-btn" id="ea-ide-link">
+                            <a href="https://bandool.com/" target="_blank" class="ea-ide-link-btn" id="ea-ide-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Visit Site" data-lang-ar="زيارة الموقع">Visit Site</span>
                             </a>
                         </div>

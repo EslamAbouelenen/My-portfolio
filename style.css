@@ -65,35 +65,36 @@
 #ea-preloader-pro.ea-loaded { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.05); }
 .ea-code-window-preloader {
     width: 90%; max-width: 500px;
-    background: #05070a; border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+    background: rgba(5, 7, 10, 0.95); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 20px rgba(var(--accent-rgb), 0.1);
     overflow: hidden; font-family: 'Fira Code', monospace;
     transform: translateY(20px); opacity: 0;
-    animation: ea-slide-up-fade 0.5s forwards 0.2s;
+    backdrop-filter: blur(15px);
+    animation: ea-slide-up-fade 0.4s forwards 0.1s;
 }
 #ea-full-portfolio.ea-light-mode .ea-code-window-preloader {
-    background: #ffffff; border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.95); border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 0 20px rgba(var(--accent-rgb), 0.1);
 }
 @keyframes ea-slide-up-fade {
     to { transform: translateY(0); opacity: 1; }
 }
 .ea-window-header {
-    background: #080a10; padding: 10px 15px; display: flex; align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.02); position: relative;
+    background: rgba(255,255,255,0.03); padding: 12px 15px; display: flex; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05); position: relative;
 }
 #ea-full-portfolio.ea-light-mode .ea-window-header {
-    background: #f1f5f9; border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 .ea-dots { display: flex; gap: 8px; }
-.ea-dot { width: 12px; height: 12px; border-radius: 50%; }
+.ea-dot { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
 .ea-red { background: #ff5f56; }
 .ea-yellow { background: #ffbd2e; }
 .ea-green { background: #27c93f; }
 .ea-header-title {
     position: absolute; left: 50%; transform: translateX(-50%);
-    font-size: 0.85rem; color: #64748b; font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem; color: #8892b0; font-family: 'Outfit', sans-serif; letter-spacing: 0.5px;
 }
 .ea-window-body { padding: 25px; color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; text-align: left; }
 #ea-full-portfolio.ea-light-mode .ea-window-body { color: #1e293b; }
@@ -134,7 +135,7 @@
 @keyframes ea-blink { 50% { opacity: 0; } }
 .ea-code-progress-bar {
     margin-top: 25px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;
-    overflow: hidden; opacity: 0; animation: ea-fade-line 0.3s forwards 3.5s;
+    overflow: hidden; opacity: 0; animation: ea-fade-line 0.2s forwards 2s;
 }
 #ea-full-portfolio.ea-light-mode .ea-code-progress-bar { background: rgba(0,0,0,0.1); }
 .ea-code-progress-fill {
@@ -142,6 +143,7 @@
     box-shadow: 0 0 10px rgb(var(--accent-rgb)); transition: width 0.1s ease;
 }
 @media (max-width: 768px) {
+    .ea-code-window-preloader { width: 95%; }
     .ea-code-window-preloader { width: 95%; }
     .ea-window-body { font-size: 0.75rem; padding: 15px; }
     .ea-indent { padding-left: 10px; }
@@ -178,10 +180,11 @@
 .ea-hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(var(--glass-border) 1px, transparent 1px), linear-gradient(90deg, var(--glass-border) 1px, transparent 1px); background-size: 50px 50px; }
 .ea-hero-bounds { position: relative; z-index: 10; width: 90% !important; max-width: 1250px !important; margin: 0 auto !important; display: flex; align-items: center; justify-content: space-between; gap: 60px !important; }
 .ea-hero-text-content { flex: 1.15 !important; display: flex !important; flex-direction: column !important; align-items: flex-start !important; text-align: start !important; }
-#ea-full-portfolio .ea-hero-badge-wrap { position: relative; display: inline-flex; margin-bottom: 30px; border-radius: 50px; padding: 2px; overflow: hidden; }
-#ea-full-portfolio .ea-hero-badge-wrap::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 70%, rgb(var(--accent-rgb)) 100%); animation: ea-badge-spin 2s linear infinite; }
+#ea-full-portfolio .ea-hero-badge-wrap { position: relative; display: inline-flex; margin-bottom: 30px; border-radius: 50px; padding: 2px; overflow: hidden; box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.15); }
+#ea-full-portfolio .ea-hero-badge-wrap::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 70%, rgb(var(--accent-rgb)) 100%); animation: ea-badge-spin 3s linear infinite; }
 @keyframes ea-badge-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 #ea-full-portfolio .ea-badge-content { background: var(--nav-bg); backdrop-filter: blur(10px); border-radius: 50px; padding: 10px 24px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+#ea-full-portfolio.ea-light-mode .ea-badge-content { background: #f8f9fc; }
 #ea-full-portfolio .ea-badge-text { color: rgb(var(--text-main-rgb)) !important; font-size: 1.05rem !important; font-weight: 700 !important; margin: 0 !important; padding: 0 !important; line-height: 1 !important; }
 #ea-full-portfolio .ea-glow-dot { width: 10px !important; height: 10px !important; border-radius: 50% !important; background: rgb(var(--accent-rgb)) !important; box-shadow: 0 0 12px rgb(var(--accent-rgb)) !important; animation: ea-blink 1.5s infinite; display: block !important; }
 #ea-full-portfolio .ea-hero-heading { font-size: 4.5rem !important; font-weight: 900 !important; line-height: 1.25 !important; color: rgb(var(--text-main-rgb)) !important; margin-bottom: 25px !important; letter-spacing: -1px !important; }
@@ -330,7 +333,7 @@
 #ea-full-portfolio .ea-ide-folder-name i.fa-chevron-down { font-size: 0.75rem !important; width: 15px !important; color: #858585 !important; }
 #ea-full-portfolio .ea-ide-folder-content { display: flex !important; flex-direction: column !important; overflow: hidden !important; transition: max-height 0.3s ease !important; }
 #ea-full-portfolio .ea-ide-folder.collapsed .ea-ide-folder-content { display: none !important; }
-#ea-full-portfolio .ea-ide-file { padding: 6px 15px 6px 40px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-size: 0.9rem !important; color: #cccccc !important; cursor: pointer !important; transition: 0.2s !important; position: relative !important; }
+#ea-full-portfolio .ea-ide-file { padding: 6px 15px 6px 60px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-size: 0.9rem !important; color: #cccccc !important; cursor: pointer !important; transition: 0.2s !important; position: relative !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-file { color: #333 !important; }
 #ea-full-portfolio .ea-ide-file:hover { background: #2a2d2e !important; color: #fff !important; }
 #ea-full-portfolio.ea-light-mode .ea-ide-file:hover { background: #e8e8e8 !important; color: #000 !important; }
@@ -444,7 +447,7 @@
     #ea-full-portfolio .ea-ide-folder-name { display: flex !important; }
     #ea-full-portfolio .ea-ide-folder-content { display: flex !important; }
     #ea-full-portfolio .ea-ide-folder.collapsed .ea-ide-folder-content { display: none !important; }
-    #ea-full-portfolio .ea-ide-file { background: transparent !important; border-radius: 0 !important; padding: 6px 15px 6px 40px !important; white-space: normal !important; font-size: 0.9rem !important; margin: 0 !important; }
+    #ea-full-portfolio .ea-ide-file { background: transparent !important; border-radius: 0 !important; padding: 8px 15px 8px 50px !important; white-space: normal !important; font-size: 0.9rem !important; margin: 0 !important; }
     #ea-full-portfolio.ea-light-mode .ea-ide-file { background: transparent !important; }
     #ea-full-portfolio .ea-ide-file:hover, #ea-full-portfolio .ea-ide-file.active { background: #37373d !important; color: #fff !important; }
     #ea-full-portfolio.ea-light-mode .ea-ide-file:hover, #ea-full-portfolio.ea-light-mode .ea-ide-file.active { background: #e4e6f1 !important; color: #000 !important; }
@@ -621,3 +624,5 @@
     #ea-full-portfolio .ea-logo { font-size: 1.4rem !important; }
     #ea-full-portfolio .ea-header-btn { display: none !important; } 
 }
+
+@keyframes ea-fade-in { from { opacity: 0; } to { opacity: 1; } }

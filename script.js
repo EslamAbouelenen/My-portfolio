@@ -141,22 +141,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloaderPro) {
         let loadProgress = 0;
         const statusSpan = document.getElementById('ea-preloader-status');
-        setTimeout(() => {
-            const progressInterval = setInterval(() => {
-                loadProgress += Math.floor(Math.random() * 4) + 1;
-                if (loadProgress >= 100) {
-                    loadProgress = 100;
-                    clearInterval(progressInterval);
-                    if (statusSpan) statusSpan.innerText = "Loaded Successfully!";
-                    setTimeout(() => {
-                        preloaderPro.classList.add('ea-loaded');
-                        setTimeout(() => preloaderPro.style.display = 'none', 1000);
-                    }, 800);
-                }
-                if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
-                if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
-            }, 30);
-        }, 4500);
+                            setTimeout(() => {
+              const progressInterval = setInterval(() => {
+                  loadProgress += Math.floor(Math.random() * 15) + 5;
+                  if (loadProgress >= 100) {
+                      loadProgress = 100;
+                      clearInterval(progressInterval);
+                      if (statusSpan) {
+                          statusSpan.innerText = "Loaded Successfully!";
+                          statusSpan.style.color = "#27C93F";
+                      }
+                      if (preloaderCountPro) preloaderCountPro.parentElement.style.color = "#27C93F";
+                      setTimeout(() => {
+                          preloaderPro.classList.add('ea-loaded');
+                          setTimeout(() => preloaderPro.style.display = 'none', 500);
+                      }, 1000);
+                  }
+                  if (preloaderCountPro) preloaderCountPro.innerText = loadProgress;
+                  if (progressBarPro) progressBarPro.style.width = loadProgress + '%';
+              }, 120);
+          }, 4500);
     }
     const codeWindow = document.getElementById('eaCodeWindow');
     document.addEventListener('mousemove', (e) => {
@@ -275,4 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if(targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    
+
+    
 });
